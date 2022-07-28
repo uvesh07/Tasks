@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Local Storage</title>
+
+    <script type="text/javascript">
+        function localadd() {
+            var a = document.getElementById("mail").value;
+            localStorage.setItem("email", a);
+
+            alert("Your Email "+localStorage.getItem("email")+" is Saved in Local Storage Successfully!!!")
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- <h2>Refresh to increase Number of Hits on page in localStorage</h2>
+
+        <script type="text/javascript">
+
+            if(localStorage.hit){
+                localStorage.hit = Number(localStorage.hit) + 1;
+            }
+            else{
+                localStorage.hit = 1;
+            }
+            document.write(localStorage.hit);
+        </script> -->
+
+    <form action="" id="form1">
+
+        <label for="mail">Enter email :</label> <input type="email" id="mail"> <br>
+        <input type="button" onclick="localadd()" value="submit">
+
+    </form>
+
+
+</body>
+
+</html>

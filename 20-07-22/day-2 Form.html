@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title>Contact Us Form </title>
+    <style>
+        form {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            /* background-color: green; */
+            width: 100%;
+            float: left;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body background="photos/th.png"
+    style="background-repeat:no-repeat; background-position:center; position: relative; background-size:cover;">
+
+
+    <form method="get" action="Task day - 01.html" target="_blank" autocomplete="on">
+        <table>
+            <tr>
+                <td colspan="3">
+                    <h3 style="text-align: center;"> Contact Us: </h3>
+                </td>
+            </tr>
+            <tr>
+                <td><label>First Name :</label></td>
+                <td><input type="text" id="fname" name="fname" placeholder="Enter First Name" autofocus> </td>
+            </tr><br>
+            <tr>
+                <td><label>Last Name :</label></td>
+                <td><input type="text" id="lname" name="lname" placeholder="Enter Last Name"></td>
+            </tr><br>
+            <tr>
+                <td><label>Email :</label></td>
+                <td> <input type="email" id="email" name="email" placeholder="Enter Email"></td>
+            </tr><br>
+            <tr>
+                <td><label>Contact :</label></td>
+                <td><input type="tel" id="con" name="con" placeholder="Contact Number" maxlength="10"></td>
+            </tr><br>
+            <tr>
+                <td><label>Date of Birth & Time :</label></td>
+                <td><input type="datetime-local" id="dob" name="dob" min="1999-06-01" max="2002-06-01"></td>
+            </tr><br>
+
+            <tr>
+                <td><label for="myfile">Select a File :</label></td>
+                <td><input type="file" id="myfile" name="myfile"></td>
+            </tr>
+            <tr>
+                <td><label>Address :</label></td>
+                <td><textarea rows="5" cols="20"></textarea></td><br>
+            </tr>
+            <tr>
+                <td><label>Pincode :</label></td>
+                <td><input type="text" pattern="[0-9]{6}" title="6 Digit code"></td>
+            </tr>
+            <tr>
+                <td><label>State :</label></td>
+                <td><select multiple>
+                        <option value="">Select State</option>
+                        <option>Gujarat</option>
+                        <option>Rajasthan</option>
+                        <option>Delhi</option>
+                        <option>Panjab</option>
+                        <option>Hariyana</option>
+                        <option>Madhypradesh</option>
+                        <option>Bihar</option>
+                        <option>Uttarpradesh</option>
+                        <option>Sikkim</option>
+                    </select> </td>
+            </tr> <br>
+            <tr>
+                <td><label>Gender :</label></td>
+                <td><input type="radio" id="male" name="gen" value="Male"><label for="male">Male</label> <input
+                        type="radio" id="female" name="gen" value="Female"><label for="female">Female</label>
+                </td>
+            </tr><br>
+            <tr>
+                <td><label>Hobbies :</label></td>
+                <td><input type="checkbox" id="h1" name="Hobbies" value="Cricket">Cricket</input></td>
+                <td><input type="checkbox" id="h2" name="hobbies" value="Gamming">Gamming</input></td>
+            </tr><br>
+            <tr>
+                <td> </td>
+                <td><input type="checkbox" id="h2" name="hobbies" value="Gamming">Singing</input></td>
+                <td><input type="checkbox" id="h2" name="hobbies" value="Gamming">Dancing</input></td>
+            </tr> <br>
+
+            <tr>
+                <td> </td>
+                <td><input type="checkbox" id="h2" name="hobbies" value="Gamming">youtube</input></td> <br>
+            </tr>
+            <tr>
+                <td><label>Remark :</label></td>
+                <td> <input type="text" id="fname" name="fname" placeholder="Your Remarks"></td>
+            </tr> <br>
+            <tr>
+                <td><label>Search :</label></td>
+                <td><input type="search" placeholder="search on Google"></td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td><input type="submit" style="margin-right: 10%;"> <input type="reset"></td>
+                <td> <input type="button" value="Button" style="margin-right: 20px;"> <input type="image"
+                        src="photos/th.png" height="20px" width="50px"></td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+
+</html>

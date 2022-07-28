@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Session Storage</title>
+        
+    </head>
+
+    <body>
+        <h2>Refresh to increase Number of Hits on page in SessionStorage</h2>
+        <script type="text/javascript">
+
+            if(sessionStorage.hit){
+                sessionStorage.hit = Number(sessionStorage.hit) + 1;
+            }
+            else{
+                sessionStorage.hit = 1;
+            }
+            document.write(sessionStorage.hit);
+        </script>
+        
+    </body>
+   
+</html>

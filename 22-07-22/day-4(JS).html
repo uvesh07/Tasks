@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript</title>
+
+    <script type="text/javascript">
+        function add() {
+            var a, b, c;
+
+            a = document.getElementById("fnum").value;
+
+            b = document.form1.snum.value;
+
+            c = parseInt(a) + parseInt(b);
+
+
+            document.getElementById("ans").innerHTML = c;
+            alert(c);
+
+        }
+        function sub() {
+            var a, b, c;
+
+            a = document.getElementById("fnum").value;
+
+            b = document.form1.snum.value;
+
+            c = parseInt(a) - parseInt(b);
+
+
+            document.getElementById("ans").innerHTML = c;
+            alert(c);
+
+        }
+        function mul() {
+            var a, b, c;
+
+            a = document.getElementById("fnum").value;
+
+            b = document.form1.snum.value;
+
+            c = parseInt(a) * parseInt(b);
+
+            document.getElementById("ans").innerHTML = c;
+            alert(c);
+
+        }
+        function division() {
+            var a, b, c;
+
+            a = document.getElementById("fnum").value;
+
+            b = document.form1.snum.value;
+
+            c = parseFloat(a) / parseFloat(b);
+
+
+            document.getElementById("ans").innerHTML = c;
+            alert(c);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Calculater Programe in JavaScript</h1> <br>
+
+    <form method="get" action="" id="form1" name="form1" autocomplete="on">
+
+
+        <lable>First Number :</lable> <input type="text" id="fnum" placeholder="Enter First Number"> <br>
+
+        <lable>Second Number :</lable> <input type="text" id="snum" placeholder="Enter Second Number"> <br> <br>
+
+        <input type="button" onclick="add()" value="Addition"> <br> <br>
+
+        <input type="button" onclick="sub()" value="Subtraction"> <br> <br>
+
+        <input type="button" onclick="mul()" value="Multiplication"> <br> <br>
+
+        <input type="button" onclick="division()" value="Division">
+
+        <h3>Ans :</h3> <b id="ans"></b>
+    </form>
+</body>
+
+</html>
