@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript">
+        function addtolocal(){
+            var email = document.getElementById('mail').value;
+            var pass = document.getElementById('pass').value;
+
+            localStorage.setItem('Email',email);
+            localStorage.setItem('password',pass);
+
+            sessionStorage.setItem('Email',email);
+            sessionStorage.setItem('Password',pass);
+
+            alert("Your Email is "+ localStorage.getItem('Email')+ "is saved in local storage & Session storage");
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1 class="h-prime center"> Login Form </h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <div class="form">
+                    <form action="" method="get">
+                        <div class="input-group">
+                            <label for="mail">Enter Email :</label> <input type="email" name="mail" id="mail" placeholder="please Enter your Email"> <br>
+                        </div>
+                        <div class="input-group">
+                            <label for="pass">Enter Password :</label><input type="password" name="pass" id="pass" placeholder="please Enter your Password"> <br>
+                        </div>
+                        <div class="input-group">
+                            <button onclick="addtolocal()">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

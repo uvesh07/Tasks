@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML 5</title>
+</head>
+<body>
+    
+    <header>
+        <h1>HTML Elements </h1>
+    </header>
+
+    <hr>
+
+    <aside style="float: right;">
+        <b>Unorder List</b>
+        <ul>
+            <li>
+                <h2>H2 tag</h2>
+            </li>
+            <li>
+                <h3>H3 tag</h3>
+            </li>
+            <li>
+                <h4>H4 tag</h4>
+            </li>
+            <li>
+                <h5>H5 tag</h5>
+            </li>
+            <li>
+                <h6>H6 tag</h6>
+            </li>
+
+        </ul>
+    </aside>
+    <hr>
+
+    <h4 title="Yes it's Me">This is Me : </h4>
+    <figure>
+        <img src="photos/Bhai Potte.jpg" alt="My photo" width="15%" height="30%">
+        <figcaption>Pathan Uvesh</figcaption>
+    </figure> <br>
+
+    <marquee width="60%" direction="right" height="20px" style="background-color: yellow;">
+        This is a sample scrolling text that has scrolls in the upper direction.
+    </marquee> <br>
+
+    <u>Cite : </u>
+    <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p> <br>
+    <hr> <br>
+
+    <h2><u>Article Tag</u></h2>
+
+    <article>
+        <h4>Google Chrome</h4>
+        <p>Google <command>Chrome</command> is a web browser developed by Google, <cite>released in 2008.</cite> Chrome is the world's most
+            popular web
+            browser today!</p>
+    </article>
+
+    <article>
+        <h4>Mozilla Firefox</h4>
+        <p>Mozilla Firefox is an <mark> web browser </mark> developed by Mozilla. Firefox has been the second most popular
+            web browser since January, 2018.</p>
+    </article>
+
+    <article>
+        <h4>Microsoft Edge</h4>
+        <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet
+            Explorer.</p>
+    </article>
+    <br>
+    <h2><u>Section Tag :</u></h2>
+
+    <section>
+        <h2>WWF History</h2>
+        <p>The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the <wbr>
+            conservation, research and restoration of the environment,<wbr> formerly named the World Wildlife Fund. WWF was
+            founded in 1961.</p>
+    </section> <br>
+    <hr>
+
+    <h4>Audio Tag :</h4>
+    <audio src="photos/horse.ogv" controls></audio> <br>
+
+    <h4>{Dl / Dt/ DD} Tags</h4>
+
+    <dl>
+        <dt>Coffee</dt>
+        <dd>Black hot drink</dd>
+        <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+
+    <h4>Del and Ins Tags</h4>
+
+    <p>Hello guys, my shirt is <del>red</del> <ins>Blue!</ins> </p> <br>
+    <hr>
+
+    <h4><u>The meter Tag :</u></h4>
+    <b>Your Memory :</b> <meter value="20" min="0" max="100"></meter> <br>
+
+    <label for="file">Downloading progress:</label>
+    <progress id="file" value="32" max="100"> 32% </progress> <br>
+
+    <form oninput="o1.value=parseInt(a.value)+parseInt(b.value)">
+        <h4><u>Output TAG</u></h4>
+        <b>Select Values From these two Range Bars:</b><input id="a" type="range" value="50"> + <input id="b"
+            type="range" value="50"> =
+        <output name="o1" for="a b"></output>
+    </form>
+    <h4>Details Tag</h4>
+    <details>
+        <summary>HTML</summary>
+        <p>The HyperText Markup Language or <s>XHTML</s> HTML is the standard markup language for documents designed to
+            be displayed
+            in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting
+            languages such as JavaScript .</p>
+    </details> <br>
+    <hr>
+
+    <h4>Form page Using Embed Tag :</h4> <br>
+
+    <embed type="text/html" src="login.html" height="500" width="100%" style="display: block ;"> <br>
+
+    <video src="photos/movie.mp4" height="500" width="100%" controls></video> <br> <br>
+
+
+    <footer style="text-align:center; background-color:blueviolet;">
+        <fieldset>
+            <legend>Personal Information:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="Pathan"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Uvesh"><br><br>
+            <input type="submit" value="Submit"> <input type="color" value="red">
+        </fieldset>
+    </footer>
+</body>
+</html>
