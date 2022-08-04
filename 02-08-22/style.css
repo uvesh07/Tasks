@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+
+}
+
+.header{
+    background-color:#131921;
+    display: block;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.row{
+    display: flex;
+    height: fit-content;
+    /* padding: 20px; */
+}
+
+.col-1{
+    margin: 5px;
+    width: fit-content;
+
+}
+
+.col-1:hover{
+    border: 2px solid white;
+}
+
+.col-1 img{
+    padding: 10px;
+    height: auto;
+    width: 200px;
+    padding-top: 30px;
+}
+.col-2{
+    padding-left: 20px;
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+}
+
+.col-2 a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    text-align: left;
+    padding-top:20px ;
+
+}
+
+.col-2:hover{
+    border: 2px solid white;
+}
+
+.fa-location-dot{
+    visibility: visible;
+    display: block;
+}
+
+.col-3{
+    width: 500px;
+    padding-top: 30px;
+    padding-left: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+.col-3 input{
+     /* padding-top: 20px;  */
+     padding: 10px 50px;
+}
+
+.col-3 select{
+    padding: 10px 0px;
+    width: 60px;
+}
+
+.col-4{
+    margin: 5px;
+    width: fit-content;
+    padding-top: 20px;
+}
+
+.col-4 select{
+    width: 80px;
+    height: 50px;
+    background: transparent;
+    color: white;
+    margin: 0px 10px;
+}
+
+.col-4:hover{
+    border:2px solid white;
+}
+
+.col-5{
+    margin: 5px 30px;
+    width: 150px;
+    
+}
+
+.col-5:hover{
+    border: 2px solid white;
+}
+
+.col-5 a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    text-align: left;
+    padding-top:20px ;
+}
+
+.col-6{
+    margin: 5px 30px;
+    width: 150px;
+}
+
+.col-6:hover{
+    border: 2px solid white;
+}
+
+.col-6 a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    text-align: left;
+    padding-top:20px ;
+}
+
+.col-7{
+    margin: 5px 30px;
+    width: 150px;
+    padding: 5px 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.col-7:hover{
+    border: 2px solid white;
+}
+
+.col-7 a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    text-align: left;
+    padding-top:20px ;
+}
+
+
+/*----------------------------------- Navbar------------------------------------ */
+
+.navbar{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    /* padding: 0px 20px; */
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    /* line-height: 50px; */
+    height: fit-content;
+}
+
+.navbar nav{
+    padding-top: 10px;
+    background-color: #232F3E;
+}
+
+.navbar nav ul{
+    display: flex;
+}
+
+.navbar nav ul li{
+    list-style: none;
+    padding-right: 20px;
+}
+
+.navbar nav ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar nav ul li a:hover{
+    border: 2px solid white;
+}
+
+.center_img{
+    width: 100%;
+    /* max-width: 95%; */
+}
+
+.center_img img{
+    width: 100%;
+    max-width: 100%;
+    height: 600px;
+    position: relative; 
+}
+
+/* ------------------------------ offer Section ---------------------------- */
+
+.offers{
+    display: inline-block;
+    position: relative;
+    padding-top: 30px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    background-color: #e8ebeb;
+}
+
+.offers .row{
+    display: flex;
+    margin: 20px 15px;
+}
+
+.offers .row .col1{
+    height: 434px;
+    width: 100%;
+    padding: 10px;
+    margin: 0px 10px;
+    background-color: white;
+}
+
+.offers .row .col1 .row1_off{
+    display: flex;
+    width: 100%;
+}
+
+.offers .row .col1 .row1_off .col1_off{
+    width: 150px;
+    height: 150px;
+    margin: 12px;
+}
+
+.offers .row .col1 .row1_off .col1_off figure img{
+    width: 150px;
+}
+
+.offers .row .col1 .row1_off .col1_off figcaption{
+    text-align: center;
+}
+
+.row1_off img{
+    margin-top: 10px;
+}
+
+.row1_2_off{
+    margin-top: 35px;
+}
+
+.row1_2_off img{
+    width: 350px;
+}
+
+.row .col2{
+    background-color: #e8ebeb;
+    height: 434px;
+    width: 100%;
+    
+    margin: 0px 10px;
+}
+
+.row .col2 .sign{
+    background-color: white;
+    padding: 10px;
+}
+
+.row .col2 .sign button{
+    margin-top: 20px;
+    margin-bottom:20px;
+    /* margin-left: 50px; */
+    padding: 10px 80px;
+    background-color: #F7CB3A;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.row .col2 .sign button:hover{
+    background-color: #c9a737;
+}
+
+.below_sign{
+    margin-top: 10px;
+}
+.below_sign img{
+    width: 100%;
+    height: 292px;
+}
+
+.section3{
+    
+}
+
+.row3{
+    margin: 20px 15px;
+    display: flex;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.row_head{
+    padding: 20px 20px;
+    
+}
+
+.row3 .col1{
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+       
+}
+
+.section3_content{
+    background-color: white;
+    margin: 0px 20px;
+}
+
+.row3 .col1 span{
+    color: white;
+    background-color: red;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.row3 .col1 b{
+    color: red;
+}
+
+.below_img{
+    margin-top: 10px;
+}
