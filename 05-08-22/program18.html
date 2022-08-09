@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 18</title>
+    <script>
+        function Palindrome() {
+            let num = 0, temp = 0, rem =0, rev = 0;
+
+            num = parseInt(document.getElementById('num').value);
+            temp = num;
+            while (temp > 0) {
+                rem = parseInt(temp % 10);
+                rev = parseInt(rev * 10 + rem);
+                temp = parseInt(temp / 10);
+            }
+
+            document.write("Reversed number is : " + rev + " ");
+
+            if (num == rev) {
+                document.write("<br> The number is palindrome..");
+            }
+            else {
+                document.write("<br> The number is not palindrome..");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Read a number and check whether it is Palindrome or not.(using while
+        loop)(121,474…)</h1>
+    <label for="">Enter Number :</label> <input type="number" id="num"> <br>
+    <button onclick="Palindrome()">Submit</button>
+
+</body>
+
+</html>

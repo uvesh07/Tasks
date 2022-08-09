@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 16</title>
+
+    <script>
+        function Armstrong(){
+            var num = 0, sum = 0, r = 0, temp = 0;
+
+            num = parseInt(document.getElementById('num').value);
+
+            temp = parseInt(num);
+
+            while(num > 0){
+                r = parseInt(num%10);
+                sum = parseInt(sum+(r*r*r));
+                num = parseInt(num/10);
+            }
+
+            if(temp == sum){
+                document.write("The number is Armstrong..");
+            }
+
+            else{
+                document.write("The number is not Armstrong..");
+            }
+        } 
+    </script>
+</head>
+<body>
+    
+<h1>Read a number and check whether its Armstrong or not.(using while loop)((Sum
+of xQube)=x. like153)</h1>
+
+<label for="">Enter Number :</label> <input type="number" id="num"> <br>
+    <button onclick="Armstrong()">Submit</button>
+
+</body>
+</html>

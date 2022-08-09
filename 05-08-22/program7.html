@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 7</title>
+
+    <script>
+        function profit_or_loss(){
+            var cost = document.getElementById('cost').value;
+            var sell = document.getElementById('sell').value;
+
+            var a = sell - cost;
+
+            if(sell > cost){
+                document.write("The Profit is : " + a);
+            }
+            else if(sell < cost){
+                document.write("The Loss is : " + a);
+            }
+            else{
+                document.write("No profit No Loss");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Read cost price and selling price of an item and find out how much loss or profit
+        occurs.</h1>
+
+        <label for="cost">Enter Cost Price : </label> <input type="number" id="cost"> <br>
+        <label for="sell">Enter Selling Price : </label> <input type="number" id="sell"> <br>
+        <button onclick="profit_or_loss()">Submit</button>
+        
+</body>
+</html>

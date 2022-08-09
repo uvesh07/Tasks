@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 6</title>
+    <script>
+        function gross(){
+            var salary = parseInt(document.getElementById('sal').value);
+
+            var da = (40/100) * salary;
+            var hra = (20/100) * salary;
+
+            var gross = parseFloat(salary + da + hra);
+
+            document.write("The Gross salary is : " + gross)
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Gross salary calculation</h1>
+
+    <label for="">Enter your salary :</label> <input id="sal" type="number" placeholder="Enter salary"> <br>
+
+    <button onclick="gross()">Submit</button>
+
+</body>
+</html>

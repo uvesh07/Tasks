@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Programe 2</title>
+
+    <script>
+        function convert() {
+            var user = document.getElementById('seconds').value;
+
+            var hr, min, sec;
+
+
+            hr = user/3600;
+            user = user%3600;
+            min = user/60;
+            user = user%60;
+            sec = user;
+
+            alert(parseInt(hr) + ": " + parseInt(min) + ": " + parseInt(sec));
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Seconds to Hr & minuts & Seconds </h1>
+    <form action="" method="get">
+        <label for="seconds">Enter Seconds :</label> <input type="number" id="seconds"> <br>
+        <button onclick="convert()">Submit</button>
+    </form>
+</body>
+
+</html>

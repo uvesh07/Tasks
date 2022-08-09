@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 8</title>
+
+    <script>
+        function claculate_marks() {
+            var sub1, sub2, sub3, total, pers, division;
+
+            sub1 = parseInt(document.getElementById('maths').value);
+            sub2 = parseInt(document.getElementById('hindi').value);
+            sub3 = parseInt(document.getElementById('phys').value);
+            total = parseInt(sub1 + sub2 + sub3);
+
+            pers = parseInt((sub1 + sub2 + sub3) / 3);
+
+            if (pers >= 90) {
+                division = "First class";
+            }
+
+            else if (pers > 80 && pers < 90) {
+                division = "Second class";
+            }
+
+            else if (pers > 70 && pers <= 80) {
+                division = "Third class";
+            }
+
+            else if (pers > 40 && pers <= 70) {
+                division = "Pass";
+            }
+
+            else {
+                division = "Fail";
+            }
+
+            document.write("Total marks is : " + total + "<br> Persentage of student is : " + pers + "<br> Division of student is : " + division);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Read marks of three subjects of a student and print total, percentage and
+        division.</h1>
+
+    <label for="maths">Enter Marks of Maths : </label> <input type="number" id="maths"> <br>
+    <label for="hindi">Enter Marks of Hindi : </label> <input type="number" id="hindi"> <br>
+    <label for="phys">Enter Marks of Physics : </label> <input type="number" id="phys"> <br>
+
+    <button onclick="claculate_marks()">Submit</button>
+</body>
+
+</html>

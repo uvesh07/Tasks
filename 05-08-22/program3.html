@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 3</title>
+    <script>
+        function convert(){
+            var user_hr = parseInt(document.getElementById('hours').value);    
+            var user_min = parseInt(document.getElementById('minuts').value);
+            var user_sec = parseInt(document.getElementById('seconds').value);
+
+            var sec = 0;
+            
+            sec = user_sec;
+            sec = sec + Math.floor(user_min*60);
+            sec = sec + Math.floor(user_hr*3600);
+
+            alert("The seconds are :" + parseInt(sec));
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Read number of hours, minutes, and seconds and convert them into seconds.</h1>
+    <form action="" method="get">
+        <label for="seconds">Enter Hours :</label> <input type="number" id="hours"> <br>
+        <label for="seconds">Enter Minuts :</label> <input type="number" id="minuts"> <br>
+        <label for="seconds">Enter Seconds :</label> <input type="number" id="seconds"> <br>
+        <button onclick="convert()">Submit</button>
+    </form>
+
+</body>
+</html>

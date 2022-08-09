@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 15</title>
+
+    <script>
+        function sum() {
+            var value = document.getElementById('num').value;
+               var sum = 0;
+
+            while (value) {
+                sum += value % 10;
+                value = Math.floor(value / 10);
+            }
+
+            document.write("The sum of digits : "+ sum);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Read a number and sum of its digits(using while loop)</h1>
+
+    <label for="">Enter Number :</label> <input type="number" id="num"> <br>
+    <button onclick="sum()">Submit</button>
+</body>
+
+</html>

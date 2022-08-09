@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progrm 5</title>
+
+    <script>
+        function convert(){
+            var ps = parseInt(document.getElementById('quantity').value);
+            
+            var rs,ps_50,ps_25,ps_20,ps_10,ps_5,ps_2,ps_1;
+
+            ps_50 = ps/2;
+            var ps_25 = ps/4;
+            var ps_20 = ps/5;
+            var ps_10 = ps/10;
+            var ps_5 = ps/20;
+            var ps_2 = ps/50;
+            var ps_1 = ps/100;
+
+            document.getElementById('ans').innerHTML = ("Rupees of Number of 50ps coins :" + ps_50 + "<br>Rupees of Number of 25ps coins :" + ps_25 + "<br>Rupees of Number of 20ps coins :" + ps_20 + "<br> Rupees of Number of 10ps coins :" + ps_10 + "<br>Rupees of Number of 5ps coins :" + ps_5 + "<br>Rupees of Number of 2ps coins :" + ps_2 + "<br>Rupees of Number of 1ps coins :" + ps_1);
+            
+
+
+            // rs = ps/100;
+            // ps = ps
+        }
+    </script>
+</head>
+<body>
+    <h1>Read quantity of 50,25,20,10,5,2,1 paisa coins and convert them into Rs.</h1>
+    <label for="quantity">Enter quantity of coins :</label><input type="number" id="quantity">
+    <button onclick="convert()">submit</button> <br>
+
+    Ans :  <p id="ans"></p>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 17</title>
+
+    <script>
+        function perfect(){
+            var num , i , sum = 0;
+
+            num = document.getElementById('num').value;
+
+            document.write("Factors of " + num + "are(except the number itself): <br>");
+
+            for(i=0; i<num; i++){
+                if(num%i == 0){
+                        document.write(i + "<br>");
+                        sum = parseInt(sum + i);
+                }
+            }
+
+            if(sum == num){
+                document.write("<br>" + num + " is Perfect number");                
+            }
+            else if(sum != num){
+                document.write("<br>" + num + " is not Perfect number");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Read a number and check whether it is Perfect or not.(using for loop)</h1>
+    
+    <label for="">Enter Number :</label> <input type="number" id="num"> <br>
+    <button onclick="perfect()">Submit</button>
+
+</body>
+</html>

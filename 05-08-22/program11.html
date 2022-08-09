@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 11</title>
+
+    <script>
+        function max3(){
+            var n1, n2, n3, n4, max;
+
+            n1 = document.getElementById('n1').value;
+            n2 = document.getElementById('n2').value;
+            n3 = document.getElementById('n3').value;
+            n4 = document.getElementById('n4').value;
+
+            if(n1>n2 && n1>n3 && n1>n4){
+                document.write("The max number is N1:" + n1);
+            }
+
+            else if(n2>n1 && n2>n3 && n2>n4){
+                document.write("The max number is N2:" + n2);
+            }
+
+            else if(n3>n1 && n3>n2 && n3>n4){
+                document.write("The max number is N3:" + n3);
+            }
+
+            else{
+                document.write("The max number is N4:" + n4);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Read four numbers and find out maximum.</h1>
+
+    <label>Enter Number 1: </label> <input type="number" id="n1" placeholder="Enter number "> <br>
+    <label>Enter Number 2: </label> <input type="number" id="n2" placeholder="Enter number "> <br>
+    <label>Enter Number 3: </label> <input type="number" id="n3" placeholder="Enter number "> <br>
+    <label>Enter Number 4: </label> <input type="number" id="n4" placeholder="Enter number "> <br>
+    <button onclick="max3()">Submit</button>
+</body>
+</html>
