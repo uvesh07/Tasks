@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 6</title>
+
+    <script>
+        function convert(){
+
+            var days = parseFloat(document.getElementById('days').value);
+
+            var month = parseFloat(days/30);
+
+            days = parseFloat(days%30);
+
+            document.write("Months : " + months + "Days : " + days);
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Program to convert given number of days into Months & Days.</h1>
+
+    <label for="">Enetr days : </label><input type="number" id="days"> <br>
+    <button onclick="convert()">Submit</button>
+
+</body>
+</html>
