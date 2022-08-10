@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 24</title>
+
+    <script>
+        function calculate() {
+            var num1 = parseInt(document.getElementById('num1').value);
+            var num2 = parseInt(document.getElementById('num2').value);
+            var user_input = parseInt(document.getElementById('user_input').value);
+
+            switch (user_input) {
+                case 1:
+                    document.write("Addition of two number is : " + parseInt(num1 + num2));
+                    break;
+                case 2:
+                    document.write("Subtraction of two number is : " + parseInt(num1 - num2));
+                    break;
+                case 3:
+                    document.write("Multiplication of two number is : " + parseInt(num1 * num2));
+                    break;
+                case 4:
+                    document.write("Division of two number is : " + parseFloat(num1 / num2));
+                    break;
+                default :
+                    document.write("Plese Enter between 1 to 4..");
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Program to show 5 arithmetic operations on two integer numbers using Switch-case.</h1>
+
+    <label for="">Enter First number : </label> <input type="number" id="num1"><br>
+    <label for="">Enter second number : </label> <input type="number" id="num2"><br>
+
+    <h3>Enter 1 for Addition, 2 for Subtraction, 3 for multiplication, 4 for division </h3> <br>
+    <input type="number" id="user_input"> <br>
+
+
+    <button onclick="calculate()">submit</button>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 27</title>
+
+    <script>
+        function convert() {
+            var temp = parseInt(document.getElementById('day').value);
+            var days;
+
+            switch (temp) {
+                case 1:
+                    days = "Monday";
+                    break;
+
+                    case 2:
+                    days = "Tuesday";
+                    break;
+                    
+                    case 3:
+                    days = "Wednesday";
+                    break;
+
+                    case 4:
+                    days = "Thursday";
+                    break;
+
+                    case 5:
+                    days = "Friday";
+                    break;
+
+                    case 6:
+                    days = "Saturday";
+                    break;
+
+                    case 7:
+                    days = "Sunday";
+                    break;
+
+                    default:
+                        document.write("Sorry you entered wrong number..");
+            }
+
+            document.write("The days you entered is : " + days);
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Program to print the day of the week when the number of day is input.</h1>
+
+    <label for="">Enter day between 1 to 7 : </label> <input type="number" id="day"> <br>
+    <button onclick="convert()">submit</button>
+</body>
+
+</html>

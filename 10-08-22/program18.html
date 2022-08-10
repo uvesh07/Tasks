@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 18</title>
+
+    <script>
+        function check(){
+                var char = document.getElementById('char').value;
+
+                char = char.toUpperCase();
+                if(char == "A" || char == "E" || char == "I" || char == "O" || char == "U"){
+                    document.write("The character is vowel.");
+                }
+                else{
+                    document.write("The character is consonant.");
+                }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Program to check whether scanned character is a vowel or a consonant.</h1>
+    
+    <label for="">Enter a character : </label><input type="text" id="char"> <br>
+    <button onclick="check()">submit</button>
+
+</body>
+</html>

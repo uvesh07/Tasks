@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 37</title>
+
+    <script>
+        function sqroot(){
+            var n, temp, sqrt;
+
+            n = parseInt(document.getElementById('num').value);
+
+            sqrt = parseInt(n/2);
+            temp = 0;
+
+            while(sqrt != temp){
+                temp = sqrt;
+
+                sqrt = (((n/temp)+temp)/2);
+            }
+
+            document.write("The SQRT is : " + sqrt);
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Program to compute Square root using Iteration (without using sqrt( ) library function).</h1>
+
+    <label for="">Enter Number : </label><input type="number" id="num"> <br>
+    <button onclick="sqroot()">submit</button>
+
+</body>
+</html>

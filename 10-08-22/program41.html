@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 41</title>
+
+    <script>
+        function check(){
+
+            var min = 100, max = 200, sum = 0, count = 0;
+
+            for(let i=min;i<=max;i++){
+                if(i%7 == 0){
+                    count++;
+                    sum += i;
+                }
+            }
+
+            document.write("The sum is : "+ sum +"<br>");
+            document.write("The count is : "+ count +"<br>");
+        }
+    </script>
+</head>
+<body>
+    
+<h1>Program to find the number of and sum of all integers greater than 100 and less than 200 that are divisible
+    by 7.</h1>
+
+    <h3>Click to check : </h3>
+    <button onclick="check()">submit</button>
+</body>
+</html>

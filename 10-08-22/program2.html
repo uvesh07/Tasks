@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 2</title>
+
+    <script>
+
+        function sphere(){
+            var r = parseFloat(document.getElementById('radius').value);
+
+            var vol = parseFloat((4/3) * Math.PI * (r*r*r));
+
+            var area = parseFloat(4 * Math.PI * (r*r));
+
+            document.write("The are of sphere is : " + area + "<br> The volume of sphere is : " + vol);
+        }
+    </script>
+</head>
+<body>
+    
+    <label>Enter Radius of sphere : </label>  <input type="number" id="radius"> <br>
+    <button onclick="sphere()">Add</button>
+
+</body>
+</html>
