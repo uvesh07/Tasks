@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 32</title>
+
+    <script>
+        function even(){
+            var n = parseInt(document.getElementById('num').value);
+            var i = 1;
+
+            while(i<=n){
+                document.write("Number : "+ i + "<br>");
+                i = i+3;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Program to print the series 1, 4, 7, 10, 13,...............n.</h1>
+    <label for="">Enter a number : </label> <input type="number" id="num"> <br>
+    <button onclick="even()">submit</button>
+
+</body>
+</html>

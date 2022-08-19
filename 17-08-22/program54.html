@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 51</title>
+
+    <script>
+        function show() {
+            function* myGenFn() {
+                yield 1;
+                yield 2;
+                yield 4;
+                return 3;
+            }
+
+            let myGen = myGenFn(); // This creates a generator.
+            console.log(myGen.next()); // {value: 1, done: false}
+            console.log(myGen.next()); // {value: 2, done: false}
+            console.log(myGen.next()); // {value: 3, done: true}
+            console.log(myGen.next());
+            for (const n of myGenFn()) {
+                // This outputs 1, then 2, but not 3 because done is true for this value.
+                console.log(n);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Generator :</h1>
+    <h3>Check console for output :</h3>
+    <button onclick="show()">submit</button>
+
+</body>
+
+</html>

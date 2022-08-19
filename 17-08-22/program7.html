@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <title>Program 7</title>
+    <script>
+        function calculate(){
+
+
+
+            var am = parseInt(document.getElementById('amount').value);
+            var int = parseInt(document.getElementById('interest').value);
+            var tenu = parseInt(document.getElementById('tenure').value);
+            var cp = parseInt(document.getElementById('compound').value);
+            int = parseInt(int*tenu);
+
+            var si = parseInt(am*int*tenu);
+
+            var ci = parseFloat(am*(Math.pow((1+int/cp),(cp*tenu))-1));
+
+            document.write("The Simple Intrest is : "+ si + "<br> The compound intrest is : "+ ci);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Program to calculate the Simple Interest and Compound Interest.</h1>
+
+    <label for="">Enter Amount : </label> <input type="number" id="amount"> <br>
+    <label for="">Enter Rate of Interest : </label> <input type="number" id="interest"> <br>
+    <label for="">Enter Tenure in years: </label> <input type="number" id="tenure"> <br>
+    <label for="">Enter compounding periods : </label> <input type="number" id="compound"> <br>
+
+    <button onclick="calculate()">Submit</button>
+    
+</body>
+</html>

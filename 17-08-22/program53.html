@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 50</title>
+
+    <script>
+        function show() {
+            const favourtieMovies = ['Harry Potter', 'Lord of the Rings', 'Rush Hour', 'Interstellar', 'Evolution'];
+
+            const iterator = favourtieMovies[Symbol.iterator]();
+
+            console.log(iterator.next());  //{ value: 'Harry Potter', done: false }
+            console.log(iterator.next());  //{ value: 'Lord of the Rings', done: false }
+            console.log(iterator.next());  //{ value: 'Rush Hour', done: false }
+            console.log(iterator.next());  //{ value: 'Interstellar', done: false }
+            console.log(iterator.next());  //{ value: 'Evolution', done: false }
+            console.log(iterator.next());  //{ value: undefined, done: true }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>ITERABLE :</h1>
+    <h3>Check console for output :</h3>
+    <button onclick="show()">submit</button>
+</body>
+
+</html>

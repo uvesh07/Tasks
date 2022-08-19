@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 5</title>
+
+    <script>
+        function calculate(){
+            var side1 = parseInt(document.getElementById('first').value);
+            var side2 = parseInt(document.getElementById('second').value);
+            var side3 = parseInt(document.getElementById('third').value);
+
+            var peri = parseInt(side1+side2+side3);
+             var s = parseInt(peri/2);
+
+             var area = parseFloat(Math.sqrt(s*(s-side1)*(s-side2)*(s-side3)));
+
+             document.write("The area of Triangle is : " + area);
+
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Program to calculate the perimeter and area of a triangle when sides are given.</h1>
+
+    <label for="">Enetr first side : </label><input type="number" id="first"> <br>
+    <label for="">Enetr Second side : </label><input type="number" id="second"> <br>
+    <label for="">Enetr Third side : </label><input type="number" id="third"> <br>
+    <button onclick="calculate()">Submit</button>
+
+</body>
+</html>

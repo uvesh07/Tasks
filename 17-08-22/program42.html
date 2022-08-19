@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 42</title>
+
+    <script>
+        function check(){
+            var age = document.getElementsByName('array[]');
+            var count = 0;
+            for(let i=0;i<age.length;i++){
+                if(age[i].value>=50 && age[i].value<=60){
+                    count++;
+                }
+            }
+
+            document.write("The number of person between age 50 to 60 : "+ count);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Program to input ages of 10 persons and count the number of persons between age group of 50 and 60</h1>
+
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+    <label for="">Enter your Age : </label><input type="number" name="array[]"> <br>
+
+    <button onclick="check()">submit</button>
+
+    
+</body>
+</html>

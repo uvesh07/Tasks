@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 21</title>
+
+    <script>
+        function check(){
+            var char = document.getElementById('char').value;
+
+            if(char == "G" || char == "g"){
+                document.write("Green Color");
+            }
+            else if(char == "W" || char == "w"){
+                document.write("White Color");
+            }
+            else{
+                document.write("Not a valid color");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Program to print the name of colors starting with the scanned character as- Input character Message Print. </h1>
+
+    <label for="">Enter color character : </label> <input type="text" id="char"> <br>
+    <button onclick="check()">submit</button>
+
+</body>
+</html>
