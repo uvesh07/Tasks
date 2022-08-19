@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 35</title>
+
+    <script>
+        function lar() {
+            var num = document.getElementById('num').value;
+            var max = 0, min = 0;
+            for (let i = 0; i < num.lenth; i++) {
+                if (num[i] > num[i+1]) {
+                    max = num[i];
+                }
+            }
+            document.write("max : "+ max + "<br>");
+
+            for (let j = 0; j < num.lenth; j++) {
+                if (num[i] < num[i+1]) {
+                    min = num[i];
+                }
+            }
+            document.write("min : "+ min + "<br>");
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Program to find largest / smallest among n numbers.</h1>
+
+    <label for="">Enter values : </label><input type="number" id="num"> <br>
+
+    <button onclick="lar()">submit</button>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 45</title>
+
+    <script>
+        function serch(){
+            var a = [10,20,30,40,50,60,70,80,90,100];
+            var num = document.getElementById('num').value;
+            var i=0,flag=0;
+
+            for(i=0;i<a.length;i++){
+                if(a[i]==num){
+                    document.write("Your number is found on index : " + (i+1));
+                    flag = 1;
+                    break;
+                }
+            }
+
+            if(flag == 0){
+                document.write("Sorry! your number not found.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Program to find an element in the Array (Linear Searching).</h1>
+
+    <label for="">Enter the number you want to search : </label> <input type="number" id="num"> <br>
+
+    <button onclick="serch()">Submit</button>
+    
+</body>
+</html>

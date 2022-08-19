@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 8</title>
+
+    <script>
+        function calculate(){
+
+            var f = parseInt(document.getElementById('temp').value);
+
+            var c = parseFloat(5/9 * (f-32));
+
+            document.write("The temprature in celcius is :" + c + "C");
+        }   
+    </script>
+</head>
+<body>
+
+    <h1>Program to convert the temperature in Celsius while temperature in Fahrenheit is given as -
+        C = 5/9 * (F-32) </h1>
+    
+
+        <label for="">Enter temperature : </label> <input type="number" id="temp"> <br>
+
+        <button onclick="calculate()">Submit</button>
+</body>
+</html>

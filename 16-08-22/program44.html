@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 44</title>
+
+    <script>
+        function insert() {
+
+            
+            var i = 0, j = 0, temp = 0;
+
+            var a = [4, 5, 6, 8, 9, 1, 50, 47, 20];
+
+            for (i = 1; i < a.length; i++) {
+                
+                temp = a[i];
+                j = i - 1;
+
+                while (j >= 0 && temp <= a[j])  /* Move the elements greater than temp to one position ahead from their current position*/ {
+                    a[j + 1] = a[j];
+                    j = j - 1;
+                }
+                a[j + 1] = temp;
+            }
+
+            for(let i=0;i<a.length;i++){
+                
+                document.write(a[i] + "<br>");
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Program to Sort an array through Insertion Sorting.</h1>
+    <h3>Click Here to check : </h3>
+
+    <button onclick="insert()">submit</button>
+
+</body>
+
+</html>
