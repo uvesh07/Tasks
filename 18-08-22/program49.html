@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 49</title>
+</head>
+
+<body>
+
+    <h1>Closure</h1>
+
+    <script>
+        function fun() {
+            var a = 4; // 'a' is the local variable, created by the fun()  
+            function innerfun() // the innerfun() is the inner function, or a closure  
+            {
+                return a;
+            }
+            return innerfun;
+        }
+        var output = fun();
+        document.write(output());
+        document.write(" ");
+        document.write(output());  
+    </script>
+
+</body>
+
+</html>

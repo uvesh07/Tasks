@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 55</title>
+</head>
+<body>
+
+    <h1>RegExp :</h1>
+    <h3>Check console for output :</h3>
+
+    <script>
+        let reg = /^uvesh/gim; // search at the begining of the string
+
+        reg = /sh$/;  // search at the end of the string
+        reg = /u.esh/; // allow any one character at "." position
+        reg = /u*esh/; // matches any 0 or more character  
+        reg = /uv?esh/; // matches if there is v or there is not v (v is optional)  
+        let str = `uesh
+, I am pathan uvesh uvesh`;
+
+        let result = reg.exec(str);
+        console.log("The result from exec is : ", result);
+
+        if(reg.test(str)){
+            console.log(`The string ${str} matches with the Expression ${reg.source}`);
+        }
+        else{
+            console.log(`The string ${str} dose not matches with the Expression ${reg.source}`);
+        }
+    </script>
+    
+</body>
+</html>

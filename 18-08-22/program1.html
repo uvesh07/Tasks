@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 1</title>
+
+    <script>
+        function Add(){
+           var first = parseInt(document.getElementById('first').value); 
+           var second = parseInt(document.getElementById('second').value); 
+
+           document.write("The sum of two number is : "+ parseInt(first+second));
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Add two numbers</h1>
+
+    <label>Enter first number</label>  <input type="number" id="first"> <br>
+    <label>Enter second number</label>  <input type="number" id="second"> <br>
+
+    <button onclick="Add()">Add</button>
+    
+</body>
+</html>
