@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 12</title>
+    <script>
+        function seperate(){
+            var num = parseInt(document.getElementById('num').value);
+
+            var fir, sec, thi, forth, sum;
+            //  add1,add2,add3,final;
+
+            forth = parseInt(num%10);
+            num = num/10;
+            thi = parseInt(num%10);
+            num = num/10;
+            sec = parseInt(num%10);
+            num = num/10;
+            fir = parseInt(num%10);
+            num = num/10;
+
+            sum = parseInt(fir + sec + thi + forth);
+
+            // add1 = parseInt(forth*10 + thi);
+            // add2 = parseInt(add1*10 + sec);
+            // final = parseInt(add2*10 + fir);
+
+            document.write("The final sum of given number's individual digits is : "+ sum);
+            
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Program to print the sum of all digits of a 4-digit number.</h1>
+
+    <label for="">Eneter Four digit number : </label> <input type="number" id="num"> <br>
+    <button onclick="seperate()">Submit</button>
+
+</body>
+</html>

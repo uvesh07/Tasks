@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 38</title>
+
+    <script>
+        function convert(){
+            var n,i;
+            const a = [];
+
+            n = parseInt(document.getElementById('num').value);
+
+            for(i=0;n>0;i++){
+                a[i]= parseInt(n%2);
+                n = n/2;
+            }
+
+            document.write("The binery is : ");
+
+            for(i=i-1;i>=0;i--){
+                document.write(a[i]);
+            }
+        }   
+    </script>
+</head>
+<body>
+
+    <h1>Program to input a number into decimal number system and then print its equivalent binary.</h1>
+
+    <label for="">Enter number to convert : </label> <input type="number" id="num"> <br>
+    <button onclick="convert()">submit</button>
+    
+</body>
+</html>

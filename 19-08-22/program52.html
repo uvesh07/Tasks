@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 49</title>
+
+    <script>
+        // function setdata() {
+            const myobj = { name: "Uvesh", age: 20, city: "Ahmedabad", mobile: [9601382718, 9499633155], add: function (a,b){return a+b;}};
+            myobj.add = myobj.add.toString();
+            const myjson = JSON.stringify(myobj);
+
+            sessionStorage.setItem("Details", myjson);
+        // }
+    </script>
+</head>
+
+<body>
+
+    <h1>JSON makes it possible to store JavaScript objects as text.</h1>
+    <!-- <button onclick="setdata()">SET</button>
+    <br> -->
+    <button onclick="getdata()">GET</button>
+
+    <script>
+        function getdata() {
+            // const myobj = { name: "Uvesh", age: 20, city: "Ahmedabad", mobile: [9601382718, 9499633155] };
+            // const myjson = JSON.stringify(myobj);
+
+            let text = sessionStorage.getItem("Details");
+            let obj = JSON.parse(text);
+
+            document.write("Name : " + obj.name + "<br>"); 
+            document.write("Age : " + obj.age + "<br>"); 
+            document.write("City : " + obj.city + "<br>"); 
+            document.write("Mobile1 : " + obj.mobile[0] + "<br>"); 
+            document.write("Mobile2 : " + obj.mobile[1] + "<br>"); 
+            obj.add = eval("(" + obj.add + ")");
+            document.write("Addition function : " + obj.add(10,20) + "<br>"); 
+        }
+    </script>
+</body>
+
+</html>

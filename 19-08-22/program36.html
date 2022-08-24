@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 36</title>
+
+    <script>
+        function fibo() {
+            var n = parseInt(document.getElementById('num').value);
+            var num1 = 0, num2 = 1, swap = 0;
+
+            document.write(num1 + "<br>");
+            document.write(num2 + "<br>");
+            for (let i = 0; i <= n; i++) {
+                swap = parseInt(num1 + num2);
+
+                document.write(swap + "<br>");
+
+                num1 = num2;
+                num2 = swap;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Program to print Fibonacci series.</h1>
+
+    <label for="">Enter a number : </label><input type="number" id="num"> <br>
+    <button onclick="fibo()">submit</button>
+
+</body>
+
+</html>

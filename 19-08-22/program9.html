@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 9</title>
+    <script>
+        function convert(){
+            var first = parseInt(document.getElementById('first').value);
+            var second = parseInt(document.getElementById('second').value);
+            var third = parseInt(document.getElementById('third').value);
+
+            var a = parseInt(first*10 + second); 
+            var final = parseInt(a*10 + third);
+
+            document.write("The final number is : " + final);
+
+        }   
+    </script>
+</head>
+<body>
+    
+    <h1>Program to input three 1 -digit numbers and form a new 3-digit number.</h1>
+
+    <label for="">Enter first digit :</label><input type="number" id="first"> <br>
+    <label for="">Enter second digit :</label><input type="number" id="second"> <br>
+    <label for="">Enter third digit :</label><input type="number" id="third"> <br>
+
+    <button onclick="convert()">Submit</button>
+
+
+</body>
+</html>

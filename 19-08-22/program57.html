@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 54</title>
+</head>
+<body>
+
+    <h1>Callbacks function : </h1>
+    
+    <h3>Click to call acallback function : </h3>
+
+    <button onclick="cal()">calculate</button> <br> <br>
+
+    Ans : <b id="p1"></b>
+    <script>
+        function cal(){
+            function show(ans){
+                document.getElementById("p1").innerHTML = ans;
+            }
+
+            function calculate(num1,num2,mycallback){
+                let sum = num1+num2;
+
+                mycallback(sum);
+            }
+
+            calculate(11,11,show);
+
+        }
+    </script>
+</body>
+</html>

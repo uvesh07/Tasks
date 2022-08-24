@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 53</title>
+
+
+</head>
+<body>
+    
+    <h1>Promises : </h1>
+    <h3>Check that condition is write or wrong : </h3>
+    <p id="p1"></p>
+
+    <script>
+
+        let mypromise = new Promise(function(myResolve,myReject){
+            let marks = 40;
+
+            if(marks > 33){
+                myResolve("Pass");
+            }
+            else{
+                myReject("Fail");
+            }
+        });
+
+        mypromise.then(
+            function(value){show(value);},
+            function(error){show(error);}
+        );
+
+        function show(some){
+            document.getElementById("p1").innerHTML = some;
+            // document.write(some);
+        }
+    </script>
+</body>
+</html>

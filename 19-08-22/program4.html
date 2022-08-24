@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 4</title>
+
+    <script>
+        function calculate(){
+            var cur = parseInt(document.getElementById('cur').value);
+
+            var area = parseFloat((cur*cur)/(4*Math.PI))
+
+            document.write("The area of circle is : " + area);
+        }
+    </script>
+</head>
+<body>
+    
+<h1>Program to calculate the area of a circle while the circumference is given.</h1>
+
+<label for="">Enter circumference : </label><input type="number" id="cur"> <br>
+<button onclick="calculate()">Submit</button>
+
+</body>
+</html>

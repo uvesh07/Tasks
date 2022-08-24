@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Program 34</title>
+
+    <script>
+        function factorial(){
+            var n = parseInt(document.getElementById('num').value);
+            var i=parseInt(n);
+            
+            while(n > 1){
+                
+                i = parseInt(i*(n-1));
+                n--;
+            }
+
+            // for(i=n;n<0;n--){
+            //     document.write("hellooooo");
+            //     i = parseInt(i*n-1);
+            //     // n = parseInt(n-1);
+            // }
+            document.write("The type : "+ typeof(i)+ "<br>"); 
+            document.write("The factorial is : "+ i);
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Program to print the factorial of x.</h1>
+
+    <label for="">Enter a number : </label><input type="number" id="num"> <br>
+    <button onclick="factorial()">submit</button>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Program 46</title>
+
+    <script>
+
+        function send() {
+
+            var a = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+            var num = document.getElementById('num').value;
+
+            var l = 0, r = parseInt((a.length)-1), m;
+
+            bserch(a,l,r,num);
+
+        }
+
+        function bserch(a,l,r,num) {
+            
+            var i = 0, flag = 0;
+            
+
+            if (r >= l) {
+
+                m = Math.round(l + (r - l) / 2);
+                
+                // document.write("is :"+ a[5]+"<br>"); 
+                // document.write("is :"+ r +"<br>"+ l +"<br>"); 
+                // document.write("is :"+ num +"<br>"); 
+
+
+
+                if (a[m] == num) {
+                    document.write("Your number is found at index :" + (m+1));
+                }
+
+                else if (a[m] > num) {
+                    bserch(a,l,(m-1),num);
+                }
+
+                else if (a[m] < num) {
+                    bserch(a,(m+1),r,num);
+                }
+
+                else{
+                    document.write("Sorry! your number not found.");
+                }
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Program to find an element in the Array (Binary Searching).</h1>
+
+    <label for="">Enter the number you want to search : </label> <input type="number" id="num"> <br>
+
+    <button onclick="send()">Submit</button>
+
+</body>
+
+</html>
