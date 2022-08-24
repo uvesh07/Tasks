@@ -1,0 +1,1131 @@
+2) DISPLAY THE DETAILS OF ALL EMPLOYEES.
+
+Ans : select * from employee;
+
++------+-----------+--------+-----------+--------+-----------+------------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  |
++------+-----------+--------+-----------+--------+-----------+------------+
+|    1 | uvesh     |  20000 | developer |      4 |         0 | 2018-07-22 |
+|    2 | shruti    |  20000 | developer |      4 |         0 | 2018-07-22 |
+|    3 | setu      |  20000 | developer |      4 |         0 | 2018-07-22 |
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |
+|    9 | Aditi     |  20000 | designer  |      3 |         0 | 2022-05-21 |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |
+|   25 | Pooja     |  30000 | H.R.      |      2 |         0 | 2012-08-16 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |
++------+-----------+--------+-----------+--------+-----------+------------+
+
+3) DISPLAY THE NAME AND JOB FOR ALL EMPLOYEES.
+
+Ans : select e_name,job_title from employee;
+
++-----------+-----------+
+| e_name    | job_title |
++-----------+-----------+
+| uvesh     | developer |
+| shruti    | developer |
+| setu      | developer |
+| sanket    | developer |
+| ramesh    | developer |
+| mahesh    | developer |
+| suresh    | developer |
+| himesh    | developer |
+| Aditi     | designer  |
+| Akash     | designer  |
+| Anand     | designer  |
+| Arnav     | designer  |
+| Archana   | designer  |
+| Arnav     | designer  |
+| Kabir     | designer  |
+| Padma     | designer  |
+| sabir     | P.C.      |
+| sonu      | P.C.      |
+| saheba    | P.C.      |
+| Akash     | P.C.      |
+| neha      | P.C.      |
+| sneha     | P.C.      |
+| sadakat   | P.C.      |
+| Rabia     | P.C.      |
+| Pooja     | H.R.      |
+| Deep      | H.R.      |
+| Arjun     | H.R.      |
+| Keshav    | H.R.      |
+| khalid    | Manager   |
+| saurabh   | Manager   |
+| shubham   | Clerk     |
+| Mahesh    | Clerk     |
+| karun     | Clerk     |
+| raghav    | Clerk     |
+| Bharatwaj | S.A.      |
+| poojan    | S.A.      |
+| pramod    | S.A.      |
++-----------+-----------+
+
+4) DISPLAY NAME AND SALARY FOR ALL EMPLOYEES
+
+Ans: select e_name,salary from employee;
+
++-----------+--------+
+| e_name    | salary |
++-----------+--------+
+| uvesh     |  20000 |
+| shruti    |  20000 |
+| setu      |  20000 |
+| sanket    |  20000 |
+| ramesh    |  25000 |
+| mahesh    |  35000 |
+| suresh    |  15000 |
+| himesh    |  18000 |
+| Aditi     |  20000 |
+| Akash     |  14000 |
+| Anand     |  22000 |
+| Arnav     |  10000 |
+| Archana   |   5000 |
+| Arnav     |  17000 |
+| Kabir     |  26000 |
+| Padma     |  21000 |
+| sabir     |  25000 |
+| sonu      |  30000 |
+| saheba    |  22000 |
+| Akash     |  18000 |
+| neha      |  12000 |
+| sneha     |  14000 |
+| sadakat   |  20000 |
+| Rabia     |  25000 |
+| Pooja     |  30000 |
+| Deep      |  20000 |
+| Arjun     |  22000 |
+| Keshav    |  26000 |
+| khalid    |  30000 |
+| saurabh   |  35000 |
+| shubham   |  15000 |
+| Mahesh    |  10000 |
+| karun     |   5000 |
+| raghav    |  20000 |
+| Bharatwaj |  15000 |
+| poojan    |  15000 |
+| pramod    |  20000 |
++-----------+--------+
+
+5)DISPLAY EMPLOYEE NUMBER AND TOTAL SALARY FOR EACH EMPLOYEE
+
+Ans : select e_id,salary from employee;
+
++------+--------+
+| e_id | salary |
++------+--------+
+|    1 |  20000 |
+|    2 |  20000 |
+|    3 |  20000 |
+|    4 |  20000 |
+|    5 |  25000 |
+|    6 |  35000 |
+|    7 |  15000 |
+|    8 |  18000 |
+|    9 |  20000 |
+|   10 |  14000 |
+|   11 |  22000 |
+|   12 |  10000 |
+|   13 |   5000 |
+|   14 |  17000 |
+|   15 |  26000 |
+|   16 |  21000 |
+|   17 |  25000 |
+|   18 |  30000 |
+|   19 |  22000 |
+|   20 |  18000 |
+|   21 |  12000 |
+|   22 |  14000 |
+|   23 |  20000 |
+|   24 |  25000 |
+|   25 |  30000 |
+|   26 |  20000 |
+|   27 |  22000 |
+|   28 |  26000 |
+|   29 |  30000 |
+|   30 |  35000 |
+|   31 |  15000 |
+|   32 |  10000 |
+|   33 |   5000 |
+|   34 |  20000 |
+|   35 |  15000 |
+|   36 |  15000 |
+|   37 |  20000 |
++------+--------+
+
+6) DISPLAY EMPLOYEE NAME AND ANNUAL SALARY FOR ALL EMPLOYEES.
+
+Ans: select e_name,12*(salary) from employee;
+
++-----------+-------------+
+| e_name    | 12*(salary) |
++-----------+-------------+
+| uvesh     |      240000 |
+| shruti    |      240000 |
+| setu      |      240000 |
+| sanket    |      240000 |
+| ramesh    |      300000 |
+| mahesh    |      420000 |
+| suresh    |      180000 |
+| himesh    |      216000 |
+| Aditi     |      240000 |
+| Akash     |      168000 |
+| Anand     |      264000 |
+| Arnav     |      120000 |
+| Archana   |       60000 |
+| Arnav     |      204000 |
+| Kabir     |      312000 |
+| Padma     |      252000 |
+| sabir     |      300000 |
+| sonu      |      360000 |
+| saheba    |      264000 |
+| Akash     |      216000 |
+| neha      |      144000 |
+| sneha     |      168000 |
+| sadakat   |      240000 |
+| Rabia     |      300000 |
+| Pooja     |      360000 |
+| Deep      |      240000 |
+| Arjun     |      264000 |
+| Keshav    |      312000 |
+| khalid    |      360000 |
+| saurabh   |      420000 |
+| shubham   |      180000 |
+| Mahesh    |      120000 |
+| karun     |       60000 |
+| raghav    |      240000 |
+| Bharatwaj |      180000 |
+| poojan    |      180000 |
+| pramod    |      240000 |
++-----------+-------------+
+
+
+7) DISPLAY THE NAMES OF ALL EMPLOYEES WHO ARE WORKING IN DEPARTMENT NUMBER 4
+
+Ans : select e_name from employee where dep_no=4;
+
++--------+
+| e_name |
++--------+
+| uvesh  |
+| shruti |
+| setu   |
+| sanket |
+| ramesh |
+| mahesh |
+| suresh |
+| himesh |
++--------+
+
+8) DISPLAY THE NAMES OF ALL EMPLOYEES WORKING AS CLERKS AND DRAWING A SALARYMORE THAN 3000.
+
+Ans : select e_name from employee where job_title='Clerk' and salary>3000;
+
++---------+
+| e_name  |
++---------+
+| shubham |
+| Mahesh  |
+| karun   |
+| raghav  |
++---------+
+
+9) DISPLAY EMPLOYEE NUMBER AND NAMES FOR EMPLOYEES WHO EARN COMMISSION.
+
+Ans : select e_id,e_name from employee where commision!=0;
+
++------+---------+
+| e_id | e_name  |
++------+---------+
+|    4 | sanket  |
+|    5 | ramesh  |
+|    6 | mahesh  |
+|    8 | himesh  |
+|   11 | Anand   |
+|   14 | Arnav   |
+|   16 | Padma   |
+|   17 | sabir   |
+|   18 | sonu    |
+|   22 | sneha   |
+|   23 | sadakat |
+|   24 | Rabia   |
+|   26 | Deep    |
+|   31 | shubham |
+|   34 | raghav  |
+|   37 | pramod  |
++------+---------+
+
+
+10) DISPLAY EMPLOYEE NUMBER AND NAMES FOR EMPLOYEES WHO DO NOT EARN COMMISSION.
+
+Ans: select e_id,e_name from employee where commision=0;
+
++------+-----------+
+| e_id | e_name    |
++------+-----------+
+|    1 | uvesh     |
+|    2 | shruti    |
+|    3 | setu      |
+|    7 | suresh    |
+|    9 | Aditi     |
+|   10 | Akash     |
+|   12 | Arnav     |
+|   13 | Archana   |
+|   15 | Kabir     |
+|   19 | saheba    |
+|   20 | Akash     |
+|   21 | neha      |
+|   25 | Pooja     |
+|   27 | Arjun     |
+|   28 | Keshav    |
+|   29 | khalid    |
+|   30 | saurabh   |
+|   32 | Mahesh    |
+|   33 | karun     |
+|   35 | Bharatwaj |
+|   36 | poojan    |
++------+-----------+
+
+11) DISPLAY THE NAMES OF EMPLOYEES WHO ARE WORKING AS CLERK, SALESMAN OR ANALYSTAND DRAWING A SALARY MORE THAN 15000.
+
+Ans : select e_name from employee where job_title in ('Clerk','P.C.','designer') and  salary>15000;
+
++---------+
+| e_name  |
++---------+
+| Aditi   |
+| Anand   |
+| Arnav   |
+| Kabir   |
+| Padma   |
+| sabir   |
+| sonu    |
+| saheba  |
+| Akash   |
+| sadakat |
+| Rabia   |
+| raghav  |
++---------+
+
+13) DISPLAY THE LIST OF EMPLOYEES WHO HAVE JOINED THE COMPANY BEFORE 30 TH JUNE 90OR AFTER 31 ST DEC 90
+
+Ans : select e_name from employee where join_date<'30-06-90' or join_date>'31-12-90';
+
++-----------+
+| e_name    |
++-----------+
+| uvesh     |
+| shruti    |
+| setu      |
+| sanket    |
+| ramesh    |
+| mahesh    |
+| suresh    |
+| himesh    |
+| Aditi     |
+| Akash     |
+| Anand     |
+| Arnav     |
+| Archana   |
+| Arnav     |
+| Kabir     |
+| Padma     |
+| sabir     |
+| sonu      |
+| saheba    |
+| Akash     |
+| neha      |
+| sneha     |
+| sadakat   |
+| Rabia     |
+| Pooja     |
+| Deep      |
+| Arjun     |
+| Keshav    |
+| khalid    |
+| saurabh   |
+| shubham   |
+| Mahesh    |
+| karun     |
+| raghav    |
+| Bharatwaj |
+| poojan    |
+| pramod    |
++-----------+
+
+18) DISPLAY THE NAMES OF EMPLOYEES WORKING IN DEPARTMENT NUMBER 10 OR 20 OR 40 OR EMPLOYEES WORKING AS CLERKS, SALESMAN OR ANALYST.
+
+Ans : select e_name from employee where dep_no in (2,4,6) or job_title in ('Clerk','P.C.','designer');
+
++---------+
+| e_name  |
++---------+
+| uvesh   |
+| shruti  |
+| setu    |
+| sanket  |
+| ramesh  |
+| mahesh  |
+| suresh  |
+| himesh  |
+| Aditi   |
+| Akash   |
+| Anand   |
+| Arnav   |
+| Archana |
+| Arnav   |
+| Kabir   |
+| Padma   |
+| sabir   |
+| sonu    |
+| saheba  |
+| Akash   |
+| neha    |
+| sneha   |
+| sadakat |
+| Rabia   |
+| Pooja   |
+| Deep    |
+| Arjun   |
+| Keshav  |
+| shubham |
+| Mahesh  |
+| karun   |
+| raghav  |
++---------+
+
+19) DISPLAY THE NAMES OF EMPLOYEES WHOSE NAME STARTS WITH ALPHABET S.
+
+Ans : select e_name from employee where e_name like 's%';
+
++---------+
+| e_name  |
++---------+
+| shruti  |
+| setu    |
+| sanket  |
+| suresh  |
+| sabir   |
+| sonu    |
+| saheba  |
+| sneha   |
+| sadakat |
+| saurabh |
+| shubham |
++---------+
+
+20) DISPLAY EMPLOYEE NAMES FOR EMPLOYEES WHOSE NAME ENDS WITH ALPHABET.
+
+Ans : select e_name from employee where e_name like '%h';
+
++---------+
+| e_name  |
++---------+
+| uvesh   |
+| ramesh  |
+| mahesh  |
+| suresh  |
+| himesh  |
+| Akash   |
+| Akash   |
+| saurabh |
+| Mahesh  |
++---------+
+
+
+21) DISPLAY THE NAMES OF EMPLOYEES WHOSE NAMES HAVE SECOND ALPHABET A IN THEIR NAMES.
+
+Ans: select e_name from employee where e_name like '_a%';
+
++---------+
+| e_name  |
++---------+
+| sanket  |
+| ramesh  |
+| mahesh  |
+| Kabir   |
+| Padma   |
+| sabir   |
+| saheba  |
+| sadakat |
+| Rabia   |
+| saurabh |
+| Mahesh  |
+| karun   |
+| raghav  |
++---------+
+
+
+22) DISPLAY THE NAMES OF EMPLOYEES WHOSE NAME IS EXACTLY FIVE CHARACTERS IN LENGTH
+
+Ans : select e_name from employee where e_name like '_____';
+
++--------+
+| e_name |
++--------+
+| uvesh  |
+| Aditi  |
+| Akash  |
+| Anand  |
+| Arnav  |
+| Arnav  |
+| Kabir  |
+| Padma  |
+| sabir  |
+| Akash  |
+| sneha  |
+| Rabia  |
+| Pooja  |
+| Arjun  |
+| karun  |
++--------+
+
+23) DISPLAY THE NAMES OF EMPLOYEES WHO ARE NOT WORKING AS developer
+
+Ans : select e_name from employee where job_title!='developer'; 
+
++-----------+
+| e_name    |
++-----------+
+| Aditi     |
+| Akash     |
+| Anand     |
+| Arnav     |
+| Archana   |
+| Arnav     |
+| Kabir     |
+| Padma     |
+| sabir     |
+| sonu      |
+| saheba    |
+| Akash     |
+| neha      |
+| sneha     |
+| sadakat   |
+| Rabia     |
+| Pooja     |
+| Deep      |
+| Arjun     |
+| Keshav    |
+| khalid    |
+| saurabh   |
+| shubham   |
+| Mahesh    |
+| karun     |
+| raghav    |
+| Bharatwaj |
+| poojan    |
+| pramod    |
++-----------+
+
+24) DISPLAY THE NAMES OF EMPLOYEES WHO ARE NOT WORKING AS developer OR CLERK OR S.A.
+
+Ans : select e_name from employee where job_title not in ('developer','Clerk','S.A.');
+
++---------+
+| e_name  |
++---------+
+| Aditi   |
+| Akash   |
+| Anand   |
+| Arnav   |
+| Archana |
+| Arnav   |
+| Kabir   |
+| Padma   |
+| sabir   |
+| sonu    |
+| saheba  |
+| Akash   |
+| neha    |
+| sneha   |
+| sadakat |
+| Rabia   |
+| Pooja   |
+| Deep    |
+| Arjun   |
+| Keshav  |
+| khalid  |
+| saurabh |
++---------+
+
+26) DISPLAY THE TOTAL NUMBER OF EMPLOYEES WORKING IN THE COMPANY
+
+Ans : select count(*) from employee;
+
++----------+
+| count(*) |
++----------+
+|       37 |
++----------+
+
+27) DISPLAY THE TOTAL SALARY BEING PAID TO ALL EMPLOYEES
+
+Ans : select sum(salary) as Total_salary from employee;
+
++--------------+
+| Total_salary |
++--------------+
+|       737000 |
++--------------+
+
+28) DISPLAY THE MAXIMUM SALARY FROM EMP TABLE
+
+Ans : select max(salary) as Maximum_salary from employee;
+
++----------------+
+| Maximum_salary |
++----------------+
+|          35000 |
++----------------+
+
+29) DISPLAY THE MINIMUM SALARY FROM EMP TABLE
+
+Ans : select min(salary) as Maximum_salary from employee;
+
++----------------+
+| Maximum_salary |
++----------------+
+|           5000 |
++----------------+
+
+
+30) DISPLAY THE AVERAGE SALARY FROM EMP TABLE
+
+Ans : select avg(salary) as Maximum_salary from employee;
+
++----------------+
+| Maximum_salary |
++----------------+
+|     19918.9189 |
++----------------+
+
+31) DISPLAY THE MAXIMUM SALARY BEING PAID TO CLERK
+
+Ans: select max(salary) as Maximum_salary_to_Clerk from employee where job_title='Clerk';
+
++-------------------------+
+| Maximum_salary_to_Clerk |
++-------------------------+
+|                   20000 |
++-------------------------+
+
+32) DISPLAY THE MAXIMUM SALARY BEING PAID IN DEPT NO 20
+
+Ans: select max(salary) as Maximum_salary_to_dep4 from employee where dep_no=4;
+
++------------------------+
+| Maximum_salary_to_dep4 |
++------------------------+
+|                  35000 |
++------------------------+
+
+33) DISPLAY THE MIN SAL BEING PAID TO ANY SALESMAN
+
+Ans: select min(salary) as Minimum_salary_to_developer from employee where job_title='developer';
+
++-----------------------------+
+| Minimum_salary_to_developer |
++-----------------------------+
+|                       15000 |
++-----------------------------+
+
+34) DISPLAY THE AVERAGE SALARY DRAWN BY designer
+
+Ans: select avg(salary) as Average_salary from employee where job_title='designer';
+
++----------------+
+| Average_salary |
++----------------+
+|     16875.0000 |
++----------------+
+
+35) DISPLAY THE TOTAL SALARY DRAWN BY ANALYST WORKING IN DEPT NO 40
+
+Ans : select sum(salary) from employee where job_title='P.C.' and dep_no=6;
+
++-------------+
+| sum(salary) |
++-------------+
+|      166000 |
++-------------+
+
+36) DISPLAY THE NAMES OF EMPLOYEES IN ORDER OF SALARY I.E. THE NAME OF THE EMPLOYEE EARNING LOWEST SALARY SHOULD APPEAR FIRST
+
+Ans: select e_name from employee order by salary;
+
++-----------+
+| e_name    |
++-----------+
+| Archana   |
+| karun     |
+| Arnav     |
+| Mahesh    |
+| neha      |
+| sneha     |
+| Akash     |
+| Bharatwaj |
+| shubham   |
+| poojan    |
+| suresh    |
+| Arnav     |
+| Akash     |
+| himesh    |
+| Deep      |
+| sadakat   |
+| raghav    |
+| uvesh     |
+| pramod    |
+| Aditi     |
+| sanket    |
+| setu      |
+| shruti    |
+| Padma     |
+| saheba    |
+| Arjun     |
+| Anand     |
+| Rabia     |
+| sabir     |
+| ramesh    |
+| Keshav    |
+| Kabir     |
+| khalid    |
+| Pooja     |
+| sonu      |
+| mahesh    |
+| saurabh   |
++-----------+
+
+37) DISPLAY THE NAMES OF EMPLOYEES IN DESCENDING ORDER OF SALARY
+
+Ans: select e_name from employee order by salary desc;
+
++-----------+
+| e_name    |
++-----------+
+| saurabh   |
+| mahesh    |
+| sonu      |
+| Pooja     |
+| khalid    |
+| Keshav    |
+| Kabir     |
+| ramesh    |
+| sabir     |
+| Rabia     |
+| Anand     |
+| Arjun     |
+| saheba    |
+| Padma     |
+| raghav    |
+| sadakat   |
+| uvesh     |
+| Deep      |
+| pramod    |
+| shruti    |
+| setu      |
+| sanket    |
+| Aditi     |
+| Akash     |
+| himesh    |
+| Arnav     |
+| suresh    |
+| poojan    |
+| Bharatwaj |
+| shubham   |
+| Akash     |
+| sneha     |
+| neha      |
+| Arnav     |
+| Mahesh    |
+| karun     |
+| Archana   |
++-----------+
+
+38) DISPLAY THE DETAILS FROM EMP TABLE IN ORDER OF EMP NAME
+
+Ans: select e_name from employee order by e_name;
+
++-----------+
+| e_name    |
++-----------+
+| Aditi     |
+| Akash     |
+| Akash     |
+| Anand     |
+| Archana   |
+| Arjun     |
+| Arnav     |
+| Arnav     |
+| Bharatwaj |
+| Deep      |
+| himesh    |
+| Kabir     |
+| karun     |
+| Keshav    |
+| khalid    |
+| Mahesh    |
+| mahesh    |
+| neha      |
+| Padma     |
+| Pooja     |
+| poojan    |
+| pramod    |
+| Rabia     |
+| raghav    |
+| ramesh    |
+| sabir     |
+| sadakat   |
+| saheba    |
+| sanket    |
+| saurabh   |
+| setu      |
+| shruti    |
+| shubham   |
+| sneha     |
+| sonu      |
+| suresh    |
+| uvesh     |
++-----------+
+
+39) DISPLAY EMPNO, ENAME, DEPTNO, AND SAL. SORT THE OUTPUT FIRST BASED ON NAMEAND WITHIN NAME BY DEPTNO AND WITHIN DEPTNO BY SAL
+
+Ans: select e_id,e_name,dep_no,salary from employee order by e_name asc,dep_no,salary;
+
++------+-----------+--------+--------+
+| e_id | e_name    | dep_no | salary |
++------+-----------+--------+--------+
+|    9 | Aditi     |      3 |  20000 |
+|   10 | Akash     |      3 |  14000 |
+|   20 | Akash     |      6 |  18000 |
+|   11 | Anand     |      3 |  22000 |
+|   13 | Archana   |      3 |   5000 |
+|   27 | Arjun     |      2 |  22000 |
+|   12 | Arnav     |      3 |  10000 |
+|   14 | Arnav     |      3 |  17000 |
+|   35 | Bharatwaj |      7 |  15000 |
+|   26 | Deep      |      2 |  20000 |
+|    8 | himesh    |      4 |  18000 |
+|   15 | Kabir     |      3 |  26000 |
+|   33 | karun     |      5 |   5000 |
+|   28 | Keshav    |      2 |  26000 |
+|   29 | khalid    |      1 |  30000 |
+|    6 | mahesh    |      4 |  35000 |
+|   32 | Mahesh    |      5 |  10000 |
+|   21 | neha      |      6 |  12000 |
+|   16 | Padma     |      3 |  21000 |
+|   25 | Pooja     |      2 |  30000 |
+|   36 | poojan    |      7 |  15000 |
+|   37 | pramod    |      7 |  20000 |
+|   24 | Rabia     |      6 |  25000 |
+|   34 | raghav    |      5 |  20000 |
+|    5 | ramesh    |      4 |  25000 |
+|   17 | sabir     |      6 |  25000 |
+|   23 | sadakat   |      6 |  20000 |
+|   19 | saheba    |      6 |  22000 |
+|    4 | sanket    |      4 |  20000 |
+|   30 | saurabh   |      1 |  35000 |
+|    3 | setu      |      4 |  20000 |
+|    2 | shruti    |      4 |  20000 |
+|   31 | shubham   |      5 |  15000 |
+|   22 | sneha     |      6 |  14000 |
+|   18 | sonu      |      6 |  30000 |
+|    7 | suresh    |      4 |  15000 |
+|    1 | uvesh     |      4 |  20000 |
++------+-----------+--------+--------+
+
+40) DISPLAY THE NAME OF THE EMPLOYEE ALONG WITH THEIR ANNUAL SALARY (SAL * 12).THE NAME OF THE EMPLOYEE EARNING HIGHEST ANNUAL SALARY SHOULD APPEAR FIRST
+
+Ans: select e_name,12*(salary) as anual_sal from employee order by 12*(salary) desc;
+
++-----------+-----------+
+| e_name    | anual_sal |
++-----------+-----------+
+| saurabh   |    420000 |
+| mahesh    |    420000 |
+| sonu      |    360000 |
+| Pooja     |    360000 |
+| khalid    |    360000 |
+| Keshav    |    312000 |
+| Kabir     |    312000 |
+| ramesh    |    300000 |
+| sabir     |    300000 |
+| Rabia     |    300000 |
+| Anand     |    264000 |
+| Arjun     |    264000 |
+| saheba    |    264000 |
+| Padma     |    252000 |
+| raghav    |    240000 |
+| sadakat   |    240000 |
+| uvesh     |    240000 |
+| Deep      |    240000 |
+| pramod    |    240000 |
+| shruti    |    240000 |
+| setu      |    240000 |
+| sanket    |    240000 |
+| Aditi     |    240000 |
+| Akash     |    216000 |
+| himesh    |    216000 |
+| Arnav     |    204000 |
+| suresh    |    180000 |
+| poojan    |    180000 |
+| Bharatwaj |    180000 |
+| shubham   |    180000 |
+| Akash     |    168000 |
+| sneha     |    168000 |
+| neha      |    144000 |
+| Arnav     |    120000 |
+| Mahesh    |    120000 |
+| karun     |     60000 |
+| Archana   |     60000 |
++-----------+-----------+
+
+41) DISPLAY NAME, SAL, HRA, PF, DA, TOTAL SAL FOR EACH EMPLOYEE. THE OUTPUT SHOULD BE IN THE ORDER OF TOTAL SAL, HRA 15% OF SAL, DA 10% OF SAL, PF 5% OF SAL TOTAL SALARY WILL BE (SAL*HRA*DA)-PF.
+
+Ans: select e_name,salary,salary/100*15 as HRA,salary/100*10 as DA,salary/100*5 as PF,salary*salary/100*15*salary/100*10-salary/100*5 as Total_sal from employee;
+
++-----------+--------+-----------+-----------+-----------+-----------------------+
+| e_name    | salary | HRA       | DA        | PF        | Total_sal             |
++-----------+--------+-----------+-----------+-----------+-----------------------+
+| uvesh     |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| shruti    |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| setu      |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| sanket    |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| ramesh    |  25000 | 3750.0000 | 2500.0000 | 1250.0000 | 234374998750.00000000 |
+| mahesh    |  35000 | 5250.0000 | 3500.0000 | 1750.0000 | 643124998250.00000000 |
+| suresh    |  15000 | 2250.0000 | 1500.0000 |  750.0000 |  50624999250.00000000 |
+| himesh    |  18000 | 2700.0000 | 1800.0000 |  900.0000 |  87479999100.00000000 |
+| Aditi     |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| Akash     |  14000 | 2100.0000 | 1400.0000 |  700.0000 |  41159999300.00000000 |
+| Anand     |  22000 | 3300.0000 | 2200.0000 | 1100.0000 | 159719998900.00000000 |
+| Arnav     |  10000 | 1500.0000 | 1000.0000 |  500.0000 |  14999999500.00000000 |
+| Archana   |   5000 |  750.0000 |  500.0000 |  250.0000 |   1874999750.00000000 |
+| Arnav     |  17000 | 2550.0000 | 1700.0000 |  850.0000 |  73694999150.00000000 |
+| Kabir     |  26000 | 3900.0000 | 2600.0000 | 1300.0000 | 263639998700.00000000 |
+| Padma     |  21000 | 3150.0000 | 2100.0000 | 1050.0000 | 138914998950.00000000 |
+| sabir     |  25000 | 3750.0000 | 2500.0000 | 1250.0000 | 234374998750.00000000 |
+| sonu      |  30000 | 4500.0000 | 3000.0000 | 1500.0000 | 404999998500.00000000 |
+| saheba    |  22000 | 3300.0000 | 2200.0000 | 1100.0000 | 159719998900.00000000 |
+| Akash     |  18000 | 2700.0000 | 1800.0000 |  900.0000 |  87479999100.00000000 |
+| neha      |  12000 | 1800.0000 | 1200.0000 |  600.0000 |  25919999400.00000000 |
+| sneha     |  14000 | 2100.0000 | 1400.0000 |  700.0000 |  41159999300.00000000 |
+| sadakat   |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| Rabia     |  25000 | 3750.0000 | 2500.0000 | 1250.0000 | 234374998750.00000000 |
+| Pooja     |  30000 | 4500.0000 | 3000.0000 | 1500.0000 | 404999998500.00000000 |
+| Deep      |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| Arjun     |  22000 | 3300.0000 | 2200.0000 | 1100.0000 | 159719998900.00000000 |
+| Keshav    |  26000 | 3900.0000 | 2600.0000 | 1300.0000 | 263639998700.00000000 |
+| khalid    |  30000 | 4500.0000 | 3000.0000 | 1500.0000 | 404999998500.00000000 |
+| saurabh   |  35000 | 5250.0000 | 3500.0000 | 1750.0000 | 643124998250.00000000 |
+| shubham   |  15000 | 2250.0000 | 1500.0000 |  750.0000 |  50624999250.00000000 |
+| Mahesh    |  10000 | 1500.0000 | 1000.0000 |  500.0000 |  14999999500.00000000 |
+| karun     |   5000 |  750.0000 |  500.0000 |  250.0000 |   1874999750.00000000 |
+| raghav    |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
+| Bharatwaj |  15000 | 2250.0000 | 1500.0000 |  750.0000 |  50624999250.00000000 |
+| poojan    |  15000 | 2250.0000 | 1500.0000 |  750.0000 |  50624999250.00000000 |
+| pramod    |  20000 | 3000.0000 | 2000.0000 | 1000.0000 | 119999999000.00000000 |
++-----------+--------+-----------+-----------+-----------+-----------------------+
+
+
+42) DISPLAY DEPT NUMBERS AND TOTAL NUMBER OF EMPLOYEES WITHIN EACH GROUP
+
+Ans: select dep_no,count(e_id) as Total_emp from employee group by dep_no;
+
++--------+-----------+
+| dep_no | Total_emp |
++--------+-----------+
+|      1 |         2 |
+|      2 |         4 |
+|      3 |         8 |
+|      4 |         8 |
+|      5 |         4 |
+|      6 |         8 |
+|      7 |         3 |
++--------+-----------+
+
+43) DISPLAY THE VARIOUS JOBS AND TOTAL NUMBER OF EMPLOYEES WITH EACH JOB GROUP
+
+Ans: select job_title,count(e_id) as Total_emp from employee group by job_title;
+
++-----------+-----------+
+| job_title | Total_emp |
++-----------+-----------+
+| Clerk     |         4 |
+| designer  |         8 |
+| developer |         8 |
+| H.R.      |         4 |
+| Manager   |         2 |
+| P.C.      |         8 |
+| S.A.      |         3 |
++-----------+-----------+
+
+44) DISPLAY DEPARTMENT NUMBERS AND TOTAL SALARY FOR EACH DEPARTMENT
+
+Ans: select dep_no,sum(salary) as Total_salary from employee group by dep_no;
+
++--------+--------------+
+| dep_no | Total_salary |
++--------+--------------+
+|      1 |        65000 |
+|      2 |        98000 |
+|      3 |       135000 |
+|      4 |       173000 |
+|      5 |        50000 |
+|      6 |       166000 |
+|      7 |        50000 |
++--------+--------------+
+
+45) DISPLAY DEPARTMENT NUMBERS AND MAXIMUM SALARY FOR EACH DEPARTMENT
+
+Ans: select dep_no,max(salary) as Maximum_salary from employee group by dep_no;
+
++--------+----------------+
+| dep_no | Maximum_salary |
++--------+----------------+
+|      1 |          35000 |
+|      2 |          30000 |
+|      3 |          26000 |
+|      4 |          35000 |
+|      5 |          20000 |
+|      6 |          30000 |
+|      7 |          20000 |
++--------+----------------+
+
+46) DISPLAY THE VARIOUS JOBS AND TOTAL SALARY FOR EACH JOB
+
+Ans: select job_title,sum(salary) as Minimum_salary from employee group by job_title;
+
++-----------+----------------+
+| job_title |   Total_salary |
++-----------+----------------+
+| Clerk     |          50000 |
+| designer  |         135000 |
+| developer |         173000 |
+| H.R.      |          98000 |
+| Manager   |          65000 |
+| P.C.      |         166000 |
+| S.A.      |          50000 |
++-----------+----------------+
+
+47) DISPLAY EACH JOB ALONG WITH MINIMUM SAL BEING PAID IN EACH JOB GROUP
+
+Ans: select job_title,min(salary) as Minimum_salary from employee group by job_title;
+
++-----------+----------------+
+| job_title | Minimum_salary |
++-----------+----------------+
+| Clerk     |           5000 |
+| designer  |           5000 |
+| developer |          15000 |
+| H.R.      |          20000 |
+| Manager   |          30000 |
+| P.C.      |          12000 |
+| S.A.      |          15000 |
++-----------+----------------+
+
+48) DISPLAY THE DEPARTMENT NUMBERS WITH MORE THAN THREE EMPLOYEES IN EACH DEPT
+
+Ans: select dep_no from employee group by dep_no having count(*)>3;
+
++--------+
+| dep_no |
++--------+
+|      2 |
+|      3 |
+|      4 |
+|      5 |
+|      6 |
++--------+
+
+49) DISPLAY THE VARIOUS JOBS ALONG WITH TOTAL SAL FOR EACH OF THE JOBS WHERE TOTAL SALIS GREATER THAN 40000
+
+Ans: select job_title,sum(salary) as Total_salary from employee group by job_title having sum(salary)>40000;
+
++-----------+--------------+
+| job_title | Total_salary |
++-----------+--------------+
+| Clerk     |        50000 |
+| designer  |       135000 |
+| developer |       173000 |
+| H.R.      |        98000 |
+| Manager   |        65000 |
+| P.C.      |       166000 |
+| S.A.      |        50000 |
++-----------+--------------+
+
+50) DISPLAY THE VARIOUS JOBS ALONG WITH TOTAL NUMBER OF EMPLOYEES IN EACH JOB. THE OUTPUT SHOULD CONTAIN ONLY THOSE JOBS WITH MORE THAN THREE EMPLOYEES
+
+Ans: select job_title,count(e_id) as Total_Employees from employee group by job_title having count(e_id)>3;
+
++-----------+-----------------+
+| job_title | Total_Employees |
++-----------+-----------------+
+| Clerk     |               4 |
+| designer  |               8 |
+| developer |               8 |
+| H.R.      |               4 |
+| P.C.      |               8 |
++-----------+-----------------+
+
+51) DISPLAY THE NAME OF EMP WHO EARNS HIGHEST SAL.
+
+Ans: select e_name from employee where salary=(select max(salary) from employee);
+
++---------+
+| e_name  |
++---------+
+| mahesh  |
+| saurabh |
++---------+
+
+52) DISPLAY THE EMPLOYEE NUMBER AND NAME OF EMPLOYEE WORKING AS CLERK AND EARNING HIGHEST SALARY AMONG CLERKS.
+
+Ans: select e_id,e_name from employee where job_title='Clerk' and salary=(select max(salary) from employee where job_title='Clerk');
+
++------+--------+
+| e_id | e_name |
++------+--------+
+|   34 | raghav |
++------+--------+
+
+53) DISPLAY THE NAMES OF THE SALESMAN WHO EARNS A SALARY MORE THAN THE HIGHEST SALARY OF ANY CLERK.
+
+Ans: select e_name from employee where job_title='P.C.' and salary>(select max(salary) from employee where job_title='Clerk');
+
++--------+
+| e_name |
++--------+
+| sabir  |
+| sonu   |
+| saheba |
+| Rabia  |
++--------+
