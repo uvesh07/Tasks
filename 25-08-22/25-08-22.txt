@@ -1,0 +1,690 @@
+1) Inner Join:
+
+Ans: select e.id,e.name,d.dep_name,d.designation from employee e inner join department d on e.id=d.id;
+
++----+----------+------------+--------------------+
+| id | name     | dep_name   | designation        |
++----+----------+------------+--------------------+
+|  1 | uvesh    | IT         | developer          |
+|  2 | shruti   | IT         | developer          |
+|  5 | nishit   | IT         | designer           |
+|  6 | uttam    | Management | H.R                |
+|  7 | meet     | Management | Manager            |
+|  8 | mehul    | management | H.R                |
+|  9 | Rahul    | Managemant | CEO                |
+| 10 | Ami      | Marketing  | sales              |
+| 11 | sahil    | Marketing  | analyst            |
+| 13 | nishchal | Marketing  | consultant         |
+| 15 | parth    | Finance    | C.A                |
+| 16 | nisarg   | Finance    | Accountant         |
+| 17 | danis    | Finance    | Financial Planner  |
+| 19 | fardin   | Purchase   | Vendor             |
+| 20 | mustakim | Purchase   | Purchase Manager   |
++----+----------+------------+--------------------+
+
+2) Inner Join
+
+Ans: select e.id,e.name,d.dep_name,d.designation from employee e inner join department d on e.id=d.id where designation='developer';
+
++----+--------+----------+-------------+
+| id | name   | dep_name | designation |
++----+--------+----------+-------------+
+|  1 | uvesh  | IT       | developer   |
+|  2 | shruti | IT       | developer   |
++----+--------+----------+-------------+
+
+
+3) Inner Join
+
+Ans: select e.id,e.name,d.dep_name,d.dep_id,d.designation from employee e inner join department d on e.id=d.id group by d.dep_id;
+
+
++----+--------+------------+--------+-------------+
+| id | name   | dep_name   | dep_id | designation |
++----+--------+------------+--------+-------------+
+|  1 | uvesh  | IT         |      1 | developer   |
+|  6 | uttam  | Management |      2 | H.R         |
+| 10 | Ami    | Marketing  |      3 | sales       |
+| 15 | parth  | Finance    |      4 | C.A         |
+| 19 | fardin | Purchase   |      5 | Vendor      |
++----+--------+------------+--------+-------------+
+
+4) Inner Join
+
+Ans: select d.id,d.dep_name,d.dep_id,d.designation,s.email,s.salary from department d inner join salary s on d.email=s.email;
+
++------+------------+--------+--------------------+--------------------+--------+
+| id   | dep_name   | dep_id | designation        | email              | salary |
++------+------------+--------+--------------------+--------------------+--------+
+|    1 | IT         |      1 | developer          | uvesh@gmail.com    |  50000 |
+|   20 | Purchase   |      5 | Purchase Manager   | mustakim@gmail.com |  20000 |
+|    2 | IT         |      1 | developer          | shruti@gmail.com   |  45000 |
+|    5 | IT         |      1 | designer           | nick@gmail.com     |  40000 |
+|    6 | Management |      2 | H.R                | uk@gmail.com       |  25000 |
+|    7 | Management |      2 | Manager            | meet@gmail.com     |  30000 |
+|    8 | management |      2 | H.R                | mehul@gmail.com    |  40000 |
+|    9 | Managemant |      2 | CEO                | rahul@gmail.com    | 150000 |
+|   10 | Marketing  |      3 | sales              | ami@gmail.com      |  15000 |
+|   11 | Marketing  |      3 | analyst            | sahil@gmail.com    |  20000 |
+|   13 | Marketing  |      3 | consultant         | nishchal@gmail.com |  35000 |
+|   15 | Finance    |      4 | C.A                | parth@gmail.com    | 100000 |
+|   16 | Finance    |      4 | Accountant         | nisarg@gmail.com   |  75000 |
+|   17 | Finance    |      4 | Financial Planner  | dk@gmail.com       |  25000 |
+|   19 | Purchase   |      5 | Vendor             | fardin@gmail.com   |  35000 |
++------+------------+--------+--------------------+--------------------+--------+
+
+
+5) Inner join
+
+Ans: select d.id,d.dep_name,d.dep_id,d.designation,s.email,s.salary from department d inner join salary s on d.email=s.email where salary>20000;
+
++------+------------+--------+--------------------+--------------------+--------+
+| id   | dep_name   | dep_id | designation        | email              | salary |
++------+------------+--------+--------------------+--------------------+--------+
+|    1 | IT         |      1 | developer          | uvesh@gmail.com    |  50000 |
+|    2 | IT         |      1 | developer          | shruti@gmail.com   |  45000 |
+|    5 | IT         |      1 | designer           | nick@gmail.com     |  40000 |
+|    6 | Management |      2 | H.R                | uk@gmail.com       |  25000 |
+|    7 | Management |      2 | Manager            | meet@gmail.com     |  30000 |
+|    8 | management |      2 | H.R                | mehul@gmail.com    |  40000 |
+|    9 | Managemant |      2 | CEO                | rahul@gmail.com    | 150000 |
+|   13 | Marketing  |      3 | consultant         | nishchal@gmail.com |  35000 |
+|   15 | Finance    |      4 | C.A                | parth@gmail.com    | 100000 |
+|   16 | Finance    |      4 | Accountant         | nisarg@gmail.com   |  75000 |
+|   17 | Finance    |      4 | Financial Planner  | dk@gmail.com       |  25000 |
+|   19 | Purchase   |      5 | Vendor             | fardin@gmail.com   |  35000 |
++------+------------+--------+--------------------+--------------------+--------+
+
+6) Left join
+
+Ans: select e.id,e.name,d.dep_name,d.designation from employee e left join department d on e.id=d.id;
+
++----+----------+------------+--------------------+
+| id | name     | dep_name   | designation        |
++----+----------+------------+--------------------+
+|  1 | uvesh    | IT         | developer          |
+|  2 | shruti   | IT         | developer          |
+|  3 | sanket   | NULL       | NULL               |
+|  4 | setu     | NULL       | NULL               |
+|  5 | nishit   | IT         | designer           |
+|  6 | uttam    | Management | H.R                |
+|  7 | meet     | Management | Manager            |
+|  8 | mehul    | management | H.R                |
+|  9 | Rahul    | Managemant | CEO                |
+| 10 | Ami      | Marketing  | sales              |
+| 11 | sahil    | Marketing  | analyst            |
+| 12 | kush     | NULL       | NULL               |
+| 13 | nishchal | Marketing  | consultant         |
+| 14 | ramesh   | NULL       | NULL               |
+| 15 | parth    | Finance    | C.A                |
+| 16 | nisarg   | Finance    | Accountant         |
+| 17 | danis    | Finance    | Financial Planner  |
+| 18 | keshav   | NULL       | NULL               |
+| 19 | fardin   | Purchase   | Vendor             |
+| 20 | mustakim | Purchase   | Purchase Manager   |
++----+----------+------------+--------------------+
+
+7) Left join
+
+Ans: select e.id,e.name,d.dep_name,d.designation from employee e left join department d on e.id=d.id order by e.id desc;
+
++----+----------+------------+--------------------+
+| id | name     | dep_name   | designation        |
++----+----------+------------+--------------------+
+| 20 | mustakim | Purchase   | Purchase Manager   |
+| 19 | fardin   | Purchase   | Vendor             |
+| 18 | keshav   | NULL       | NULL               |
+| 17 | danis    | Finance    | Financial Planner  |
+| 16 | nisarg   | Finance    | Accountant         |
+| 15 | parth    | Finance    | C.A                |
+| 14 | ramesh   | NULL       | NULL               |
+| 13 | nishchal | Marketing  | consultant         |
+| 12 | kush     | NULL       | NULL               |
+| 11 | sahil    | Marketing  | analyst            |
+| 10 | Ami      | Marketing  | sales              |
+|  9 | Rahul    | Managemant | CEO                |
+|  8 | mehul    | management | H.R                |
+|  7 | meet     | Management | Manager            |
+|  6 | uttam    | Management | H.R                |
+|  5 | nishit   | IT         | designer           |
+|  4 | setu     | NULL       | NULL               |
+|  3 | sanket   | NULL       | NULL               |
+|  2 | shruti   | IT         | developer          |
+|  1 | uvesh    | IT         | developer          |
++----+----------+------------+--------------------+
+
+8) Left join 
+
+Ans: select e.id,e.name,d.dep_name,d.designation from employee e left join department d on e.id=d.id where d.dep_id=2;
+
++----+-------+------------+-------------+
+| id | name  | dep_name   | designation |
++----+-------+------------+-------------+
+|  6 | uttam | Management | H.R         |
+|  7 | meet  | Management | Manager     |
+|  8 | mehul | management | H.R         |
+|  9 | Rahul | Managemant | CEO         |
++----+-------+------------+-------------+
+
+9) Right join
+
+Ans: select e.id,e.name,d.dep_name,d.designation from employee e right join department d on e.id=d.id;
+
++------+----------+------------+--------------------+
+| id   | name     | dep_name   | designation        |
++------+----------+------------+--------------------+
+|    1 | uvesh    | IT         | developer          |
+|    2 | shruti   | IT         | developer          |
+|    5 | nishit   | IT         | designer           |
+|    6 | uttam    | Management | H.R                |
+|    7 | meet     | Management | Manager            |
+|    8 | mehul    | management | H.R                |
+|    9 | Rahul    | Managemant | CEO                |
+|   10 | Ami      | Marketing  | sales              |
+|   11 | sahil    | Marketing  | analyst            |
+|   13 | nishchal | Marketing  | consultant         |
+|   15 | parth    | Finance    | C.A                |
+|   16 | nisarg   | Finance    | Accountant         |
+|   17 | danis    | Finance    | Financial Planner  |
+|   19 | fardin   | Purchase   | Vendor             |
+|   20 | mustakim | Purchase   | Purchase Manager   |
++------+----------+------------+--------------------+
+
+10) Right join
+
+Ans: select e.id,e.name,d.dep_name,d.designation from employee e right join department d on e.id=d.id order by e.id desc;
+
++------+----------+------------+--------------------+
+| id   | name     | dep_name   | designation        |
++------+----------+------------+--------------------+
+|   20 | mustakim | Purchase   | Purchase Manager   |
+|   19 | fardin   | Purchase   | Vendor             |
+|   17 | danis    | Finance    | Financial Planner  |
+|   16 | nisarg   | Finance    | Accountant         |
+|   15 | parth    | Finance    | C.A                |
+|   13 | nishchal | Marketing  | consultant         |
+|   11 | sahil    | Marketing  | analyst            |
+|   10 | Ami      | Marketing  | sales              |
+|    9 | Rahul    | Managemant | CEO                |
+|    8 | mehul    | management | H.R                |
+|    7 | meet     | Management | Manager            |
+|    6 | uttam    | Management | H.R                |
+|    5 | nishit   | IT         | designer           |
+|    2 | shruti   | IT         | developer          |
+|    1 | uvesh    | IT         | developer          |
++------+----------+------------+--------------------+
+
+11) Right join
+
+Ans: select e.id,e.name,e.address,d.dep_name,d.designation from employee e right join department d on e.id=d.id where e.address='ahmedabad';
+
++----+--------+-----------+----------+-------------+
+| id | name   | address   | dep_name | designation |
++----+--------+-----------+----------+-------------+
+|  1 | uvesh  | ahmedabad | IT       | developer   |
+|  2 | shruti | ahmedabad | IT       | developer   |
++----+--------+-----------+----------+-------------+
+
+12) Full join 
+
+Ans: select e.id,e.name,e.address,d.dep_name,d.designation from employee e left join department d on e.id=d.id union all select e.id,e.name,e.address,d.dep_name,d.designation from employee e right join department d on e.id=d.id;
+
++------+----------+--------------+------------+--------------------+
+| id   | name     | address      | dep_name   | designation        |
++------+----------+--------------+------------+--------------------+
+|    1 | uvesh    | ahmedabad    | IT         | developer          |
+|    2 | shruti   | ahmedabad    | IT         | developer          |
+|    3 | sanket   | mehasana     | NULL       | NULL               |
+|    4 | setu     | ghandhinagar | NULL       | NULL               |
+|    5 | nishit   | mumbai       | IT         | designer           |
+|    6 | uttam    | kadi         | Management | H.R                |
+|    7 | meet     | pune         | Management | Manager            |
+|    8 | mehul    | junaghadh    | management | H.R                |
+|    9 | Rahul    | surat        | Managemant | CEO                |
+|   10 | Ami      | jaipur       | Marketing  | sales              |
+|   11 | sahil    | nashik       | Marketing  | analyst            |
+|   12 | kush     | jamnagar     | NULL       | NULL               |
+|   13 | nishchal | kota         | Marketing  | consultant         |
+|   14 | ramesh   | kanpur       | NULL       | NULL               |
+|   15 | parth    | delhi        | Finance    | C.A                |
+|   16 | nisarg   | udaipur      | Finance    | Accountant         |
+|   17 | danis    | jamnagar     | Finance    | Financial Planner  |
+|   18 | keshav   | Raipur       | NULL       | NULL               |
+|   19 | fardin   | satara       | Purchase   | Vendor             |
+|   20 | mustakim | Alwar        | Purchase   | Purchase Manager   |
+|    1 | uvesh    | ahmedabad    | IT         | developer          |
+|    2 | shruti   | ahmedabad    | IT         | developer          |
+|    5 | nishit   | mumbai       | IT         | designer           |
+|    6 | uttam    | kadi         | Management | H.R                |
+|    7 | meet     | pune         | Management | Manager            |
+|    8 | mehul    | junaghadh    | management | H.R                |
+|    9 | Rahul    | surat        | Managemant | CEO                |
+|   10 | Ami      | jaipur       | Marketing  | sales              |
+|   11 | sahil    | nashik       | Marketing  | analyst            |
+|   13 | nishchal | kota         | Marketing  | consultant         |
+|   15 | parth    | delhi        | Finance    | C.A                |
+|   16 | nisarg   | udaipur      | Finance    | Accountant         |
+|   17 | danis    | jamnagar     | Finance    | Financial Planner  |
+|   19 | fardin   | satara       | Purchase   | Vendor             |
+|   20 | mustakim | Alwar        | Purchase   | Purchase Manager   |
++------+----------+--------------+------------+--------------------+
+
+13) Cross join
+
+Ans: select * from employee cross join department where department.dep_id=2;
+
++----+----------+--------------+------------+------+------------+--------+-------------+-----------------+
+| id | name     | address      | mobile     | id   | dep_name   | dep_id | designation | email           |
++----+----------+--------------+------------+------+------------+--------+-------------+-----------------+
+|  1 | uvesh    | ahmedabad    | 1234567890 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  1 | uvesh    | ahmedabad    | 1234567890 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  1 | uvesh    | ahmedabad    | 1234567890 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  1 | uvesh    | ahmedabad    | 1234567890 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  2 | shruti   | ahmedabad    |  987654321 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  2 | shruti   | ahmedabad    |  987654321 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  2 | shruti   | ahmedabad    |  987654321 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  2 | shruti   | ahmedabad    |  987654321 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  3 | sanket   | mehasana     | 3214569870 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  3 | sanket   | mehasana     | 3214569870 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  3 | sanket   | mehasana     | 3214569870 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  3 | sanket   | mehasana     | 3214569870 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  4 | setu     | ghandhinagar | 1478523690 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  4 | setu     | ghandhinagar | 1478523690 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  4 | setu     | ghandhinagar | 1478523690 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  4 | setu     | ghandhinagar | 1478523690 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  5 | nishit   | mumbai       |  213654789 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  5 | nishit   | mumbai       |  213654789 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  5 | nishit   | mumbai       |  213654789 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  5 | nishit   | mumbai       |  213654789 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  6 | uttam    | kadi         | 2145630789 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  6 | uttam    | kadi         | 2145630789 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  6 | uttam    | kadi         | 2145630789 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  6 | uttam    | kadi         | 2145630789 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  7 | meet     | pune         | 3652147890 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  7 | meet     | pune         | 3652147890 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  7 | meet     | pune         | 3652147890 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  7 | meet     | pune         | 3652147890 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  8 | mehul    | junaghadh    | 3652147890 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  8 | mehul    | junaghadh    | 3652147890 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  8 | mehul    | junaghadh    | 3652147890 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  8 | mehul    | junaghadh    | 3652147890 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  9 | Rahul    | surat        | 9874563210 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  9 | Rahul    | surat        | 9874563210 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  9 | Rahul    | surat        | 9874563210 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  9 | Rahul    | surat        | 9874563210 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 10 | Ami      | jaipur       | 8521479630 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 10 | Ami      | jaipur       | 8521479630 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 10 | Ami      | jaipur       | 8521479630 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 10 | Ami      | jaipur       | 8521479630 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 11 | sahil    | nashik       | 8745693120 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 11 | sahil    | nashik       | 8745693120 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 11 | sahil    | nashik       | 8745693120 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 11 | sahil    | nashik       | 8745693120 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 12 | kush     | jamnagar     | 8745693210 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 12 | kush     | jamnagar     | 8745693210 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 12 | kush     | jamnagar     | 8745693210 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 12 | kush     | jamnagar     | 8745693210 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 13 | nishchal | kota         | 9856321470 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 13 | nishchal | kota         | 9856321470 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 13 | nishchal | kota         | 9856321470 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 13 | nishchal | kota         | 9856321470 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 14 | ramesh   | kanpur       | 8569012347 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 14 | ramesh   | kanpur       | 8569012347 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 14 | ramesh   | kanpur       | 8569012347 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 14 | ramesh   | kanpur       | 8569012347 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 15 | parth    | delhi        | 8854691230 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 15 | parth    | delhi        | 8854691230 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 15 | parth    | delhi        | 8854691230 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 15 | parth    | delhi        | 8854691230 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 16 | nisarg   | udaipur      | 9632587410 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 16 | nisarg   | udaipur      | 9632587410 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 16 | nisarg   | udaipur      | 9632587410 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 16 | nisarg   | udaipur      | 9632587410 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 17 | danis    | jamnagar     | 8523697410 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 17 | danis    | jamnagar     | 8523697410 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 17 | danis    | jamnagar     | 8523697410 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 17 | danis    | jamnagar     | 8523697410 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 18 | keshav   | Raipur       |  951478632 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 18 | keshav   | Raipur       |  951478632 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 18 | keshav   | Raipur       |  951478632 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 18 | keshav   | Raipur       |  951478632 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 19 | fardin   | satara       |  864251397 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 19 | fardin   | satara       |  864251397 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 19 | fardin   | satara       |  864251397 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 19 | fardin   | satara       |  864251397 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+| 20 | mustakim | Alwar        | 7536984120 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+| 20 | mustakim | Alwar        | 7536984120 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+| 20 | mustakim | Alwar        | 7536984120 |    8 | management |      2 | H.R         | mehul@gmail.com |
+| 20 | mustakim | Alwar        | 7536984120 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
++----+----------+--------------+------------+------+------------+--------+-------------+-----------------+
+
+
+14) Cross join
+
+Ans: select * from employee e cross join department d where d.dep_id=2 and e.id between 1 and 5;
+
++----+--------+--------------+------------+------+------------+--------+-------------+-----------------+
+| id | name   | address      | mobile     | id   | dep_name   | dep_id | designation | email           |
++----+--------+--------------+------------+------+------------+--------+-------------+-----------------+
+|  1 | uvesh  | ahmedabad    | 1234567890 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  2 | shruti | ahmedabad    |  987654321 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  3 | sanket | mehasana     | 3214569870 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  4 | setu   | ghandhinagar | 1478523690 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  5 | nishit | mumbai       |  213654789 |    6 | Management |      2 | H.R         | uk@gmail.com    |
+|  1 | uvesh  | ahmedabad    | 1234567890 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  2 | shruti | ahmedabad    |  987654321 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  3 | sanket | mehasana     | 3214569870 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  4 | setu   | ghandhinagar | 1478523690 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  5 | nishit | mumbai       |  213654789 |    7 | Management |      2 | Manager     | meet@gmail.com  |
+|  1 | uvesh  | ahmedabad    | 1234567890 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  2 | shruti | ahmedabad    |  987654321 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  3 | sanket | mehasana     | 3214569870 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  4 | setu   | ghandhinagar | 1478523690 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  5 | nishit | mumbai       |  213654789 |    8 | management |      2 | H.R         | mehul@gmail.com |
+|  1 | uvesh  | ahmedabad    | 1234567890 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  2 | shruti | ahmedabad    |  987654321 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  3 | sanket | mehasana     | 3214569870 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  4 | setu   | ghandhinagar | 1478523690 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
+|  5 | nishit | mumbai       |  213654789 |    9 | Managemant |      2 | CEO         | rahul@gmail.com |
++----+--------+--------------+------------+------+------------+--------+-------------+-----------------+
+
+15) Self join 
+
+Ans: select s.id,s.name as employee,s1.name as manager from super s left join super s1 on s.superid=s1.id;
+
++------+----------+---------+
+| id   | employee | manager |
++------+----------+---------+
+|    2 | setu     | uvesh   |
+|    3 | sanket   | setu    |
+|    4 | shruti   | setu    |
+|    1 | uvesh    | NULL    |
++------+----------+---------+
+
+16) Subquery
+
+Ans: select * from employee where id in (select id from department where email in (select email from salary where salary>20000));
+
++----+----------+-----------+------------+
+| id | name     | address   | mobile     |
++----+----------+-----------+------------+
+|  1 | uvesh    | ahmedabad | 1234567890 |
+|  2 | shruti   | ahmedabad |  987654321 |
+|  5 | nishit   | mumbai    |  213654789 |
+|  6 | uttam    | kadi      | 2145630789 |
+|  7 | meet     | pune      | 3652147890 |
+|  8 | mehul    | junaghadh | 3652147890 |
+|  9 | Rahul    | surat     | 9874563210 |
+| 13 | nishchal | kota      | 9856321470 |
+| 15 | parth    | delhi     | 8854691230 |
+| 16 | nisarg   | udaipur   | 9632587410 |
+| 17 | danis    | jamnagar  | 8523697410 |
+| 19 | fardin   | satara    |  864251397 |
++----+----------+-----------+------------+
+
+61) DISPLAY THE NAMES OF EMPLOYEES FROM DEPARTMENT NUMBER 10 WITH SALARY GREATER THAN THAT OF ANY EMPLOYEE WORKING IN OTHER DEPARTMENTS.
+
+Ans: select e.e_name,e.salary from employee e where e.dep_no=4 and e.salary>any(select e2.salary from employee e2 where e2.dep_no!=e.dep_no);
+
++--------+--------+
+| e_name | salary |
++--------+--------+
+| uvesh  |  20000 |
+| shruti |  20000 |
+| setu   |  20000 |
+| sanket |  20000 |
+| ramesh |  25000 |
+| mahesh |  35000 |
+| suresh |  15000 |
+| himesh |  18000 |
++--------+--------+
+
+62) DISPLAY THE NAMES OF EMPLOYEE FROM DEPARTMENT NUMBER 10 WITH SALARY GREATER THEN THAT OF ALL EMPLOYEE WORKING IN OTHER DEPARTMENTS.
+
+Ans:select e.e_name,e.salary from employee e where e.dep_no=4 and e.salary>all(select e2.salary from employee e2 where e2.dep_no!=e.dep_no);
+
++--------+--------+
+| e_name | salary |
++--------+--------+
+| shruti | 200000 |
++--------+--------+
+
+63) DISPLAY THE NAMES OF EMPLOYEES IN UPPER CASE.
+
+Ans: select upper(e_name) from employee;
+
++---------------+
+| upper(e_name) |
++---------------+
+| UVESH         |
+| SHRUTI        |
+| SETU          |
+| SANKET        |
+| RAMESH        |
+| MAHESH        |
+| SURESH        |
+| HIMESH        |
+| ADITI         |
+| AKASH         |
+| ANAND         |
+| ARNAV         |
+| ARCHANA       |
+| ARNAV         |
+| KABIR         |
+| PADMA         |
+| SABIR         |
+| SONU          |
+| SAHEBA        |
+| AKASH         |
+| NEHA          |
+| SNEHA         |
+| SADAKAT       |
+| RABIA         |
+| POOJA         |
+| DEEP          |
+| ARJUN         |
+| KESHAV        |
+| KHALID        |
+| SAURABH       |
+| SHUBHAM       |
+| MAHESH        |
+| KARUN         |
+| RAGHAV        |
+| BHARATWAJ     |
+| POOJAN        |
+| PRAMOD        |
++---------------+
+
+64) DISPLAY THE NAMES OF EMPLOYEES IN LOWER CASE.
+
+Ans: select lower(e_name) from employee;
+
++---------------+
+| lower(e_name) |
++---------------+
+| uvesh         |
+| shruti        |
+| setu          |
+| sanket        |
+| ramesh        |
+| mahesh        |
+| suresh        |
+| himesh        |
+| aditi         |
+| akash         |
+| anand         |
+| arnav         |
+| archana       |
+| arnav         |
+| kabir         |
+| padma         |
+| sabir         |
+| sonu          |
+| saheba        |
+| akash         |
+| neha          |
+| sneha         |
+| sadakat       |
+| rabia         |
+| pooja         |
+| deep          |
+| arjun         |
+| keshav        |
+| khalid        |
+| saurabh       |
+| shubham       |
+| mahesh        |
+| karun         |
+| raghav        |
+| bharatwaj     |
+| poojan        |
+| pramod        |
++---------------+
+
+65) DISPLAY THE NAME OF EMPLOYEES IN PROPER CASE.
+
+Ans: select INITCAP(e.e_name) from employee e;
+
+66) FIND OUT THE LENGTH OF YOUR NAME USING APPROPRIATE FUNCTION.
+
+Ans: select e_name,length(e.e_name) from employee e where e.e_id=1;
+
++--------+------------------+
+| e_name | length(e.e_name) |
++--------+------------------+
+| uvesh  |                5 |
++--------+------------------+
+
+67) DISPLAY THE LENGTH OF ALL EMPLOYEES’ NAMES.
+
+Ans: select sum(length(e_name)) as Sum_of_all_employee_name from employee;
+
++--------------------------+
+| Sum_of_all_employee_name |
++--------------------------+
+|                      206 |
++--------------------------+
+
+68) DISPLAY THE NAME OF THE EMPLOYEE CONCATENATE WITH EMP NO.
+
+Ans: select concat(e_name,",",e_id) from employee;
+
++-------------------------+
+| concat(e_name,",",e_id) |
++-------------------------+
+| uvesh,1                 |
+| shruti,2                |
+| setu,3                  |
+| sanket,4                |
+| ramesh,5                |
+| mahesh,6                |
+| suresh,7                |
+| himesh,8                |
+| Aditi,9                 |
+| Akash,10                |
+| Anand,11                |
+| Arnav,12                |
+| Archana,13              |
+| Arnav,14                |
+| Kabir,15                |
+| Padma,16                |
+| sabir,17                |
+| sonu,18                 |
+| saheba,19               |
+| Akash,20                |
+| neha,21                 |
+| sneha,22                |
+| sadakat,23              |
+| Rabia,24                |
+| Pooja,25                |
+| Deep,26                 |
+| Arjun,27                |
+| Keshav,28               |
+| khalid,29               |
+| saurabh,30              |
+| shubham,31              |
+| Mahesh,32               |
+| karun,33                |
+| raghav,34               |
+| Bharatwaj,35            |
+| poojan,36               |
+| pramod,37               |
++-------------------------+
+
+69) USE APPROPRIATE FUNCTION AND EXTRACT 3 CHARACTERS STARTING FROM 2 CHARACTERS FROM THE FOLLOWING STRING ‘ORACLE’ I.E. THE OUTPUT SHOULD B‘RAC’.
+
+Ans: select substr('oracal',2,3) from employee where e_id=1;
+
++----------------------+
+| substr('oracal',2,3) |
++----------------------+
+| rac                  |
++----------------------+
+
+70) FIND THE FIRST OCCURRENCE OF CHARACTER A FROM THE FOLLOWING STRING ‘COMPUTER MAINTENANCE CORPORATION’.
+
+Ans: select instr('Computer Maintenance Corporation','a') as position_of_first_a_in_string;
+
++-------------------------------+
+| position_of_first_a_in_string |
++-------------------------------+
+|                            11 |
++-------------------------------+
+
+71) REPLACE EVERY OCCURRENCE OF ALPHABET A WITH B IN THE STRING ALLEN’S (USER TRLATE FUNCTION).
+
+Ans: select replace("USER TRLATE FUNCTION","A","B") as Replace_function;
+
++----------------------+
+| Replace_function     |
++----------------------+
+| USER TRLBTE FUNCTION |
++----------------------+
+
+72) DISPLAY THE INFORMATION FROM EMP TABLE. WHEREVER JOB ‘MANAGER’ IS FOUND IT SHOULD BE DISPLAYED AS BOSS(REPLACE FUNCTION)
+
+Ans: select e_id,e_name,salary,replace(job_title,'Manager','Boss') from employee;
+
++------+-----------+--------+-------------------------------------+
+| e_id | e_name    | salary | replace(job_title,'Manager','Boss') |
++------+-----------+--------+-------------------------------------+
+|    1 | uvesh     |  20000 | developer                           |
+|    2 | shruti    | 200000 | developer                           |
+|    3 | setu      |  20000 | developer                           |
+|    4 | sanket    |  20000 | developer                           |
+|    5 | ramesh    |  25000 | developer                           |
+|    6 | mahesh    |  35000 | developer                           |
+|    7 | suresh    |  15000 | developer                           |
+|    8 | himesh    |  18000 | developer                           |
+|    9 | Aditi     |  20000 | designer                            |
+|   10 | Akash     |  14000 | designer                            |
+|   11 | Anand     |  22000 | designer                            |
+|   12 | Arnav     |  10000 | designer                            |
+|   13 | Archana   |   5000 | designer                            |
+|   14 | Arnav     |  17000 | designer                            |
+|   15 | Kabir     |  26000 | designer                            |
+|   16 | Padma     |  21000 | designer                            |
+|   17 | sabir     |  25000 | P.C.                                |
+|   18 | sonu      |  30000 | P.C.                                |
+|   19 | saheba    |  22000 | P.C.                                |
+|   20 | Akash     |  18000 | P.C.                                |
+|   21 | neha      |  12000 | P.C.                                |
+|   22 | sneha     |  14000 | P.C.                                |
+|   23 | sadakat   |  20000 | P.C.                                |
+|   24 | Rabia     |  25000 | P.C.                                |
+|   25 | Pooja     |  50000 | H.R.                                |
+|   26 | Deep      |  20000 | H.R.                                |
+|   27 | Arjun     |  22000 | H.R.                                |
+|   28 | Keshav    |  26000 | H.R.                                |
+|   29 | khalid    |  30000 | Boss                                |
+|   30 | saurabh   |  35000 | Boss                                |
+|   31 | shubham   |  15000 | Clerk                               |
+|   32 | Mahesh    |  10000 | Clerk                               |
+|   33 | karun     |   5000 | Clerk                               |
+|   34 | raghav    |  20000 | Clerk                               |
+|   35 | Bharatwaj |  15000 | S.A.                                |
+|   36 | poojan    |  15000 | S.A.                                |
+|   37 | pramod    |  20000 | S.A.                                |
++------+-----------+--------+-------------------------------------+
+
+
