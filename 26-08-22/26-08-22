@@ -1,0 +1,429 @@
+73) Display empno, ename, deptno from emp table. Instead of display department numbers display the related department name?
+
+Ans: select e.id,e.name,d.dep_name as dep_no from employee e,department d where e.id=d.id;
+
++----+----------+------------+
+| id | name     | dep_no     |
++----+----------+------------+
+|  1 | uvesh    | IT         |
+|  2 | shruti   | IT         |
+|  5 | nishit   | IT         |
+|  6 | uttam    | Management |
+|  7 | meet     | Management |
+|  8 | mehul    | management |
+|  9 | Rahul    | Managemant |
+| 10 | Ami      | Marketing  |
+| 11 | sahil    | Marketing  |
+| 13 | nishchal | Marketing  |
+| 15 | parth    | Finance    |
+| 16 | nisarg   | Finance    |
+| 17 | danis    | Finance    |
+| 19 | fardin   | Purchase   |
+| 20 | mustakim | Purchase   |
++----+----------+------------+
+
+74) DISPLAY YOUR AGE IN DAYS.
+
+Ans: select to_days('11-06-02') as Age_in_days from employee where e_id=1;
+
++-------------+
+| Age_in_days |
++-------------+
+|      734655 |
++-------------+
+
+82) Display the common jobs from department number 10 and 20?
+
+Ans: select id,designation from department where dep_id=2 and designation in (select designation from department where dep_id=1);
+
++------+-------------+
+| id   | designation |
++------+-------------+
+|    6 | H.R         |
+|    8 | H.R         |
++------+-------------+
+
+
+83) Display the jobs which are unique to department 1?
+
+Ans: SELECT id,designation FROM department WHERE dep_id = 1 AND designation NOT IN (SELECT designation FROM department WHERE dep_id<>1);
+
++------+-------------+
+| id   | designation |
++------+-------------+
+|    1 | developer   |
+|    5 | designer    |
++------+-------------+
+
+85) Display the details of those employees who do not have any person working under him?
+
+Ans:  SELECT * FROM Employee WHERE EMPNO NOT IN (SELECT MGR FROM Employee WHERE manager IS NOT NULL);
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |       9 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |       0 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |       0 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |       0 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |       0 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |       0 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |       0 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |       0 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |       0 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |       0 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |       0 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |       0 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |       0 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |       0 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |       0 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-08-16 |       0 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |       0 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |       0 |
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |       0 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |       0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |       0 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |       0 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |       0 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |       0 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |       0 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |       0 |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+
+86) Create View :
+
+Ans:
+
+create view select as select * from employee;
+
+select * from select_from_employee;
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh     |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |
+|    2 | shruti    | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    3 | setu      |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
+|    9 | Aditi     |  20000 | designer  |      3 |         0 | 2022-05-21 |    NULL |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |       9 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |       0 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |       0 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |       0 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |       0 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |       0 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |       0 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |       0 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |       0 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |       0 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |       0 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |       0 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |       0 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |       0 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |       0 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-08-16 |       0 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |       0 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |       0 |
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |       0 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |       0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |       0 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |       0 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |       0 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |       0 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |       0 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |       0 |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+
+
+86) DISPLAY THOSE WHO ARE NOT MANAGERS AND WHO ARE MANAGERS ANY ONE.
+
+Ans: select * from employee where e_id not in (select manager from employee where manager is not null);
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |       9 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |       0 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |       0 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |       0 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |       0 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |       0 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |       0 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |       0 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |       0 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |       0 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |       0 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |       0 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |       0 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |       0 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |       0 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-08-16 |       0 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |       0 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |       0 |
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |       0 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |       0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |       0 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |       0 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |       0 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |       0 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |       0 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |       0 |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+
+2) Select the employees in department 30.
+
+Ans: select * from employee where dep_no=4;
+
++------+--------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name | salary | job_title | dep_no | commision | join_date  | manager |
++------+--------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh  |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |
+|    2 | shruti | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    3 | setu   |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    4 | sanket |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
++------+--------+--------+-----------+--------+-----------+------------+---------+
+
+
+3) List the names, numbers and departments of all clerks.
+
+Ans: select e_id,e_name from employee where job_title='Clerk';
+
++------+---------+
+| e_id | e_name  |
++------+---------+
+|   31 | shubham |
+|   32 | Mahesh  |
+|   33 | karun   |
+|   34 | raghav  |
++------+---------+
+
+4) Find the department numbers and names of employees of all departments with deptno greater than 20.
+
+Ans: select dep_no,e_name from employee where dep_no>2;
+
++--------+-----------+
+| dep_no | e_name    |
++--------+-----------+
+|      4 | uvesh     |
+|      4 | shruti    |
+|      4 | setu      |
+|      4 | sanket    |
+|      4 | ramesh    |
+|      4 | mahesh    |
+|      4 | suresh    |
+|      4 | himesh    |
+|      3 | Aditi     |
+|      3 | Akash     |
+|      3 | Anand     |
+|      3 | Arnav     |
+|      3 | Archana   |
+|      3 | Arnav     |
+|      3 | Kabir     |
+|      3 | Padma     |
+|      6 | sabir     |
+|      6 | sonu      |
+|      6 | saheba    |
+|      6 | Akash     |
+|      6 | neha      |
+|      6 | sneha     |
+|      6 | sadakat   |
+|      6 | Rabia     |
+|      5 | shubham   |
+|      5 | Mahesh    |
+|      5 | karun     |
+|      5 | raghav    |
+|      7 | Bharatwaj |
+|      7 | poojan    |
+|      7 | pramod    |
++--------+-----------+
+
+5) Find employees whose commission is greater than their salaries.
+
+Ans: select * from employee where commision>salary;
+
+6) Find employees whose commission is greater than 60 % of their salaries.
+
+Ans: select * from employee where commision>(commision/100*60);
+
+7) List name, job and salary of all employees in department 20 who earn more than 2000/-.
+
+Ans: select e_name,job_title,salary from employee where dep_no=4 and salary>20000;
+
++--------+-----------+--------+
+| e_name | job_title | salary |
++--------+-----------+--------+
+| shruti | developer | 200000 |
+| ramesh | developer |  25000 |
+| mahesh | developer |  35000 |
++--------+-----------+--------+
+
+8) Find all salesmen in department 30 whose salary is greater than 1500/-.
+
+Ans: select * from employee where dep_no=3 and 15000 and job_title=salesman;
+
+9) Find all employees whose designation is either manager or president.
+
+Ans: select * from employee where job_title='manager' or job_title='developer';
+
++------+---------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name  | salary | job_title | dep_no | commision | join_date  | manager |
++------+---------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh   |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |
+|    2 | shruti  | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    3 | setu    |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    4 | sanket  |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh  |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh  |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh  |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh  |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
+|   29 | khalid  |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |
+|   30 | saurabh |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |
++------+---------+--------+-----------+--------+-----------+------------+---------+
+
+10) Find all managers who are not in department 30.
+
+Ans: select * from employee where job_title='manager' and dep_no!=3;
+
+11) Find all the details of managers and clerks in dept 10.
+
+Ans: select * from employee where job_title in ('manager','Clerk') and dep_no=1;
+
+12) Find the details of all the managers (in any dept) and clerks in dept 20.
+
+Ans: select * from employee where job_title='manager' and job_title=(select job_title from employee where job_title=Clerk and dep_no=20);
+
+13) Find the details of all the managers in dept. 10 and all clerks in dept 20 and all employees who are neither managers nor clerks but whose salary is more than or equal to 2000/-.
+
+Ans: select * from employee where job_title=(select job_title from employee where job_title='manager' and dep_no=10) or job_title=(select job_title from employee where job_title='Clerk' and dep_no=20) or salary = (select salary from employee where job_title not in ('manager','Clerk') and salary>=2000);
+
+14) Find the names of anyone in dept. 20 who is neither manager nor clerk.
+
+Ans: select e_name from employee where dep_no=20 and job_title not in ('manager','Clerk');
+
+15) Find the names of employees who earn between 1200/- and 1400/-.
+
+Ans: select e_name from employee where salary between 1200 and 1400;
+
+16) Find the employees who are clerks, analysts or salesmen.
+
+Ans: select * from employee where job_title in ('Clerk','analyst','salesman');
+
+17) Find the employees who are not clerks, analysts or salesmen.
+
+Ans: select * from employee where job_title not in ('Clerk','analyst','salesman');
+
+18) Find the employees who do not receive commission.
+
+Ans: select * from employee where commision=NULL;
+
+19) Find the different jobs of employees receiving commission.
+
+Ans: select job_title from employee where commision!=NULL group by job_title;
+
+20) Find the employees who do not receive commission or whose commission is less than 1000/-.
+
+Ans: select e_id,e_name where commision=NULL or commision<1000;
+
+22) Find all the employees whose name begins or ends with M
+
+select * from employees where first_name like('M%') or first_name like('%m');
+
+23) Find all the employees whose names contain the letter  M in any case
+
+select * from employees where first_name like('%M%')or first_name like('%m%');
+
+24) Find all the employees whose names are upto 15 character long and have letter  R as 3rd character of their names.
+
+Ans: select * from employee where length(e_name)<=15 and e_name like ('__r%');
+
+25) Find all the employees who were hired in the month of February (of any year).
+
+Ans: select * from employees where to_char(join_date,'mon')='feb';
+
+26) Find all the employees who were hired on last day of the month.
+
+Ans: select * from employees where join_date=last_day(join_date);
+
+27) Find all the employees who were hired more than 2 years ago.
+
+Ans: select * from employees where hire_date<add_months(sysdate,24);
+
+28) Find the managers hired in the year 2003.
+
+Ans: select * from employee where job_title='manager' and to_char(join_date,'YYYY')=2003;
+
+29) Display the names and jobs of all the employees separated by a space.
+
+Ans: select e_name||'   '||job_title from employee;
+
+30) Display the names of all the employees right aligning them to 15 characters.
+
+Ans: select lpad(e_name,15,'.') from employee;
+
+31) Display the names of all the employees padding them to the right up to 15 characters with ‘*’.
+
+Ans: Ans: select lpad(e_name,15,'*') from employee;
+
+32) Display the names of all the employees without any leading ‘A’.
+
+Ans: select e_name from employee where e_name not like('A%');
+
+33) Display the names of all the employees without any trailing R.
+
+select e_name from employee where e_name not like('%r');
+
+34) Show the first 3 and last 3 characters of the names of all the
+employees.
+
+Ans: select  substr(e_name,1,3),reverse(substr(reverse(e_name),1,3)) from employee;
+
+35) Display the names of all the employees replacing A with a.
+
+Ans: select replace(e_name,'A','a') from employee;
+
+36) Display the names of all the employees and position where the string  AR occurs in the name.
+
+Ans: select first_name,instr(first_name,'ar',1) from employees;
+
+37) Show the salary of all the employees , rounding it to the nearst RS.1000/-
+
+Ans: select salary,ceil(salary/1000)*1000 from employee;
+
+
+38) Show the salary of all the employees , ignoring the fraction less than RS.1000/-
+
+Ans: select salary,trunc(salary/1000)*1000 from employee;
+
+39) Show the names of all the employees and date on which they completed 3 years of service.
+
+Ans: select e_name,add_months(hire_date,36) from employee;
+
+40) For each employee, display the no. of days passed since the employee joined the company.
+
+Ans: select round(months_between(sysdate,hire_date)*30.41) No_days_between from employees;
+
+
