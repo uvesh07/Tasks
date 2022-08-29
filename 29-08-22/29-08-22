@@ -1,0 +1,1362 @@
+1) Procedure 
+
+Ans: delimiter //
+
+create procedure sp_get_employee()
+    -> begin 
+    -> select * from employee;
+    -> end //
+
+delimiter ;
+
+call sp_get_employee;
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh     |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |
+|    2 | shruti    | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    3 | setu      |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
+|    9 | Aditi     |  20000 | designer  |      3 |         0 | 2022-05-21 |    NULL |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |       9 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |       0 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |       0 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |       0 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |       0 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |       0 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |       0 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |       0 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |       0 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |       0 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |       0 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |       0 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |       0 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |       0 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |       0 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-08-16 |       0 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |       0 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |       0 |
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |       0 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |       0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |       0 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |       0 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |       0 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |       0 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |       0 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |       0 |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+
+
+2) Procedure IN 
+
+Ans: delimiter //
+
+create procedure sp_get_by_job(IN x int) begin select * from employee where dep_no=x end //
+
+delimiter ;
+
+call sp_get_by_job(4);
+
++------+--------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name | salary | job_title | dep_no | commision | join_date  | manager |
++------+--------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh  |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |
+|    2 | shruti | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    3 | setu   |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    4 | sanket |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
++------+--------+--------+-----------+--------+-----------+------------+---------+
+
+3) Procedure out
+
+Ans: delimiter //
+
+create procedure sp_get_total(out x int) begin select count(*) into x from employee; end //
+
+delimiter ;
+
+call sp_get_total(@total);
+
+select @total AS Total_Employee;
+
++----------------+
+| Total_Employee |
++----------------+
+|             37 |
++----------------+
+
+4) Procedure INOUT
+
+Ans: delimiter //
+
+create procedure sp_get_total_manager(INOUT x int,IN y varchar(20)) begin select count(*) into x from employee where job_title=y;  end //
+
+delimiter ;
+
+call sp_get_total_manager(@total,"developer");
+
+select @total AS Total_Developer;
+
++-----------------+
+| Total_Developer |
++-----------------+
+|               8 |
++-----------------+
+
+5) Create new User
+
+Ans: create user 'uvesh'@'localhost' identified by '';
+
+6) Grant permision to user
+
+Ans: grant all on *.* to 'uvesh'@'localhost';
+
+7) Display permision given to user
+
+Ans: show grants for 'uvesh'@'localhost';
+
++----------------------------------------------------+
+| Grants for uvesh@localhost                         |
++----------------------------------------------------+
+| GRANT ALL PRIVILEGES ON *.* TO `uvesh`@`localhost` |
++----------------------------------------------------+
+
+8) create user with password
+
+Ans: create user 'sonu'@'localhost' identified by 'abc123';
+
+9) grant some permision 
+
+Ans: grant create,update,delete on employee.* to 'sonu'@'localhost';
+
+10) display permision 
+
+Ans: show grants for 'sonu'@'localhost';
+
+
++-------------------------------------------------------------------------------------------------------------+
+| Grants for sonu@localhost                                                                                   |
++-------------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `sonu`@`localhost` IDENTIFIED BY PASSWORD '*6691484EA6B50DDDE1926A220DA01FA9E575C18A' |
+| GRANT UPDATE, DELETE, CREATE ON `employee`.* TO `sonu`@`localhost`                                          |
++-------------------------------------------------------------------------------------------------------------+
+
+11) Revoke permision
+
+Ans: revoke create on employee.* from sonu@localhost;
+
+show grants for 'sonu'@'localhost';
+
++-------------------------------------------------------------------------------------------------------------+
+| Grants for sonu@localhost                                                                                   |
++-------------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `sonu`@`localhost` IDENTIFIED BY PASSWORD '*6691484EA6B50DDDE1926A220DA01FA9E575C18A' |
+| GRANT UPDATE, DELETE ON `employee`.* TO `sonu`@`localhost`                                                  |
++-------------------------------------------------------------------------------------------------------------+
+
+12) Drop user
+
+Ans: drop user sonu@localhost;
+
+
+41) For each employee, display the no. of months passed since the employee joined the company.
+
+Ans: select e_name,TIMESTAMPDIFF(MONTH,join_date,CURRENT_DATE()) AS Months_since_joining from employee;
+
++-----------+----------------------+
+| e_name    | Months_since_joining |
++-----------+----------------------+
+| uvesh     |                   49 |
+| shruti    |                   49 |
+| setu      |                   49 |
+| sanket    |                   49 |
+| ramesh    |                   98 |
+| mahesh    |                   16 |
+| suresh    |                  -53 |
+| himesh    |                  100 |
+| Aditi     |                    3 |
+| Akash     |                   77 |
+| Anand     |                  -45 |
+| Arnav     |                  -23 |
+| Archana   |                  145 |
+| Arnav     |                   86 |
+| Kabir     |                  -82 |
+| Padma     |                    4 |
+| sabir     |                  160 |
+| sonu      |                  217 |
+| saheba    |                  180 |
+| Akash     |                  148 |
+| neha      |                  221 |
+| sneha     |                  209 |
+| sadakat   |                   75 |
+| Rabia     |                  134 |
+| Pooja     |                  120 |
+| Deep      |                  140 |
+| Arjun     |                  129 |
+| Keshav    |                  259 |
+| khalid    |                   99 |
+| saurabh   |                   27 |
+| shubham   |                   13 |
+| Mahesh    |                  -19 |
+| karun     |                   28 |
+| raghav    |                  231 |
+| Bharatwaj |                  -16 |
+| poojan    |                  -30 |
+| pramod    |                  144 |
++-----------+----------------------+
+
+42) For each employee, display the no. of months passed since the employee joined the company.
+
+Ans: select e_name,TIMESTAMPDIFF(DAY,join_date,CURRENT_DATE()) AS Months_since_days from employee;
+
++-----------+-------------------+
+| e_name    | Months_since_days |
++-----------+-------------------+
+| uvesh     |              1499 |
+| shruti    |              1499 |
+| setu      |              1499 |
+| sanket    |              1499 |
+| ramesh    |              2997 |
+| mahesh    |               503 |
+| suresh    |             -1633 |
+| himesh    |              3054 |
+| Aditi     |               100 |
+| Akash     |              2351 |
+| Anand     |             -1392 |
+| Arnav     |              -724 |
+| Archana   |              4421 |
+| Arnav     |              2626 |
+| Kabir     |             -2516 |
+| Padma     |               133 |
+| sabir     |              4880 |
+| sonu      |              6616 |
+| saheba    |              5488 |
+| Akash     |              4512 |
+| neha      |              6735 |
+| sneha     |              6370 |
+| sadakat   |              2293 |
+| Rabia     |              4090 |
+| Pooja     |              3665 |
+| Deep      |              4270 |
+| Arjun     |              3934 |
+| Keshav    |              7893 |
+| khalid    |              3026 |
+| saurabh   |               839 |
+| shubham   |               407 |
+| Mahesh    |              -600 |
+| karun     |               859 |
+| raghav    |              7044 |
+| Bharatwaj |              -511 |
+| poojan    |              -936 |
+| pramod    |              4391 |
++-----------+-------------------+
+
+43) Display the details of all the employees sorted on the names.
+
+Ans: select * from employee order by e_name;
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+|    9 | Aditi     |  20000 | designer  |      3 |         0 | 2022-05-21 |    NULL |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |       0 |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |       9 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |       0 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |       0 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |       0 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |       0 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |       0 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |       0 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |       0 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |       0 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |       0 |
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |       0 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |       0 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |       0 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |       0 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-08-16 |       0 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |       0 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |       0 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |       0 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |       0 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |       0 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |       0 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |       0 |
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |
+|    3 | setu      |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    2 | shruti    | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |       0 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |       0 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |       0 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    1 | uvesh     |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+
+44) Display the names of the employees, based on the tenure with the oldest employee coming first.
+
+Ans: select *,(TIMESTAMPDIFF(YEAR,join_date,CURRENT_DATE())) AS year from employee order by (TIMESTAMPDIFF(DAY,join_date,CURRENT_DATE())) desc;
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager | year |
++------+-----------+--------+-----------+--------+-----------+------------+---------+------+
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |       0 |   21 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |       0 |   19 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |       0 |   18 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |       0 |   18 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |       0 |   17 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |       0 |   15 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |       0 |   13 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |       0 |   12 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |       0 |   12 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |       0 |   12 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |       0 |   11 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |       0 |   11 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-08-16 |       0 |   10 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |       0 |   10 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |    8 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |    8 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |    8 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |       0 |    7 |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |       9 |    6 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |       0 |    6 |
+|    3 | setu      |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |    4 |
+|    2 | shruti    | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |    4 |
+|    1 | uvesh     |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |    4 |
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |    4 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |       0 |    2 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |    2 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |       0 |    1 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |    1 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |       0 |    0 |
+|    9 | Aditi     |  20000 | designer  |      3 |         0 | 2022-05-21 |    NULL |    0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |       0 |   -1 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |       0 |   -1 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |       0 |   -1 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |       0 |   -2 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |       0 |   -3 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |   -4 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |       0 |   -6 |
++------+-----------+--------+-----------+--------+-----------+------------+---------+------+
+
+45) Display the names, jobs and salaries of employees, sorting on job and salary.
+
+Ans: select e_name,job_title,salary from employee order by job_title,salary;
+
++-----------+-----------+--------+
+| e_name    | job_title | salary |
++-----------+-----------+--------+
+| karun     | Clerk     |   5000 |
+| Mahesh    | Clerk     |  10000 |
+| shubham   | Clerk     |  15000 |
+| raghav    | Clerk     |  20000 |
+| Archana   | designer  |   5000 |
+| Arnav     | designer  |  10000 |
+| Akash     | designer  |  14000 |
+| Arnav     | designer  |  17000 |
+| Aditi     | designer  |  20000 |
+| Padma     | designer  |  21000 |
+| Anand     | designer  |  22000 |
+| Kabir     | designer  |  26000 |
+| suresh    | developer |  15000 |
+| himesh    | developer |  18000 |
+| uvesh     | developer |  20000 |
+| sanket    | developer |  20000 |
+| setu      | developer |  20000 |
+| ramesh    | developer |  25000 |
+| mahesh    | developer |  35000 |
+| shruti    | developer | 200000 |
+| Deep      | H.R.      |  20000 |
+| Arjun     | H.R.      |  22000 |
+| Keshav    | H.R.      |  26000 |
+| Pooja     | H.R.      |  50000 |
+| khalid    | Manager   |  30000 |
+| saurabh   | Manager   |  35000 |
+| neha      | P.C.      |  12000 |
+| sneha     | P.C.      |  14000 |
+| Akash     | P.C.      |  18000 |
+| sadakat   | P.C.      |  20000 |
+| saheba    | P.C.      |  22000 |
+| Rabia     | P.C.      |  25000 |
+| sabir     | P.C.      |  25000 |
+| sonu      | P.C.      |  30000 |
+| Bharatwaj | S.A.      |  15000 |
+| poojan    | S.A.      |  15000 |
+| pramod    | S.A.      |  20000 |
++-----------+-----------+--------+
+
+46) Display the names, jobs and salaries of employees, sorting on descending order of job and within job sorted on salary.
+
+Ans: select e_name,job_title,salary from employee order by job_title,salary desc;
+
++-----------+-----------+--------+
+| e_name    | job_title | salary |
++-----------+-----------+--------+
+| raghav    | Clerk     |  20000 |
+| shubham   | Clerk     |  15000 |
+| Mahesh    | Clerk     |  10000 |
+| karun     | Clerk     |   5000 |
+| Kabir     | designer  |  26000 |
+| Anand     | designer  |  22000 |
+| Padma     | designer  |  21000 |
+| Aditi     | designer  |  20000 |
+| Arnav     | designer  |  17000 |
+| Akash     | designer  |  14000 |
+| Arnav     | designer  |  10000 |
+| Archana   | designer  |   5000 |
+| shruti    | developer | 200000 |
+| mahesh    | developer |  35000 |
+| ramesh    | developer |  25000 |
+| uvesh     | developer |  20000 |
+| sanket    | developer |  20000 |
+| setu      | developer |  20000 |
+| himesh    | developer |  18000 |
+| suresh    | developer |  15000 |
+| Pooja     | H.R.      |  50000 |
+| Keshav    | H.R.      |  26000 |
+| Arjun     | H.R.      |  22000 |
+| Deep      | H.R.      |  20000 |
+| saurabh   | Manager   |  35000 |
+| khalid    | Manager   |  30000 |
+| sonu      | P.C.      |  30000 |
+| Rabia     | P.C.      |  25000 |
+| sabir     | P.C.      |  25000 |
+| saheba    | P.C.      |  22000 |
+| sadakat   | P.C.      |  20000 |
+| Akash     | P.C.      |  18000 |
+| sneha     | P.C.      |  14000 |
+| neha      | P.C.      |  12000 |
+| pramod    | S.A.      |  20000 |
+| Bharatwaj | S.A.      |  15000 |
+| poojan    | S.A.      |  15000 |
++-----------+-----------+--------+
+
+47) List the employee names, department names and salary for those employees who have completed 1 year of service.
+
+Ans: select e_name,job_title,salary,(TIMESTAMPDIFF(YEAR,join_date,CURRENT_DATE())) AS Duration from employee where (TIMESTAMPDIFF(YEAR,join_date,CURRENT_DATE())) > 1;
+
++---------+-----------+--------+----------+
+| e_name  | job_title | salary | Duration |
++---------+-----------+--------+----------+
+| uvesh   | developer |  20000 |        4 |
+| shruti  | developer | 200000 |        4 |
+| setu    | developer |  20000 |        4 |
+| sanket  | developer |  20000 |        4 |
+| ramesh  | developer |  25000 |        8 |
+| himesh  | developer |  18000 |        8 |
+| Akash   | designer  |  14000 |        6 |
+| Archana | designer  |   5000 |       12 |
+| Arnav   | designer  |  17000 |        7 |
+| sabir   | P.C.      |  25000 |       13 |
+| sonu    | P.C.      |  30000 |       18 |
+| saheba  | P.C.      |  22000 |       15 |
+| Akash   | P.C.      |  18000 |       12 |
+| neha    | P.C.      |  12000 |       18 |
+| sneha   | P.C.      |  14000 |       17 |
+| sadakat | P.C.      |  20000 |        6 |
+| Rabia   | P.C.      |  25000 |       11 |
+| Pooja   | H.R.      |  50000 |       10 |
+| Deep    | H.R.      |  20000 |       11 |
+| Arjun   | H.R.      |  22000 |       10 |
+| Keshav  | H.R.      |  26000 |       21 |
+| khalid  | Manager   |  30000 |        8 |
+| saurabh | Manager   |  35000 |        2 |
+| karun   | Clerk     |   5000 |        2 |
+| raghav  | Clerk     |  20000 |       19 |
+| pramod  | S.A.      |  20000 |       12 |
++---------+-----------+--------+----------+
+
+48) List the employee names, department names and salary for those employees who are earning 0 commission or commission is null. Sort your output in the order of department name.
+
+Ans: select e_name,job_title,salary from employee where commision=0 order by job_title;
+
++-----------+-----------+--------+
+| e_name    | job_title | salary |
++-----------+-----------+--------+
+| Mahesh    | Clerk     |  10000 |
+| karun     | Clerk     |   5000 |
+| Kabir     | designer  |  26000 |
+| Aditi     | designer  |  20000 |
+| Akash     | designer  |  14000 |
+| Arnav     | designer  |  10000 |
+| Archana   | designer  |   5000 |
+| uvesh     | developer |  20000 |
+| suresh    | developer |  15000 |
+| setu      | developer |  20000 |
+| shruti    | developer | 200000 |
+| Pooja     | H.R.      |  50000 |
+| Arjun     | H.R.      |  22000 |
+| Keshav    | H.R.      |  26000 |
+| saurabh   | Manager   |  35000 |
+| khalid    | Manager   |  30000 |
+| neha      | P.C.      |  12000 |
+| Akash     | P.C.      |  18000 |
+| saheba    | P.C.      |  22000 |
+| Bharatwaj | S.A.      |  15000 |
+| poojan    | S.A.      |  15000 |
++-----------+-----------+--------+
+
+49) List the employee names, department names and hiredate for those employees who have joined in 2003. Sort your output in the order of joining date.
+
+Ans: select e_name,job_title,join_date from employee where YEAR(join_date)=2018;
+
++--------+-----------+------------+
+| e_name | job_title | join_date  |
++--------+-----------+------------+
+| uvesh  | developer | 2018-07-22 |
+| shruti | developer | 2018-07-22 |
+| setu   | developer | 2018-07-22 |
+| sanket | developer | 2018-07-22 |
++--------+-----------+------------+
+
+50) List all the department names along with the names of employees in them , irrespective of the fact whether any employee is there or not.
+
+Ans: select job_title,e_name from employee;
+
++-----------+-----------+
+| job_title | e_name    |
++-----------+-----------+
+| developer | uvesh     |
+| developer | shruti    |
+| developer | setu      |
+| developer | sanket    |
+| developer | ramesh    |
+| developer | mahesh    |
+| developer | suresh    |
+| developer | himesh    |
+| designer  | Aditi     |
+| designer  | Akash     |
+| designer  | Anand     |
+| designer  | Arnav     |
+| designer  | Archana   |
+| designer  | Arnav     |
+| designer  | Kabir     |
+| designer  | Padma     |
+| P.C.      | sabir     |
+| P.C.      | sonu      |
+| P.C.      | saheba    |
+| P.C.      | Akash     |
+| P.C.      | neha      |
+| P.C.      | sneha     |
+| P.C.      | sadakat   |
+| P.C.      | Rabia     |
+| H.R.      | Pooja     |
+| H.R.      | Deep      |
+| H.R.      | Arjun     |
+| H.R.      | Keshav    |
+| Manager   | khalid    |
+| Manager   | saurabh   |
+| Clerk     | shubham   |
+| Clerk     | Mahesh    |
+| Clerk     | karun     |
+| Clerk     | raghav    |
+| S.A.      | Bharatwaj |
+| S.A.      | poojan    |
+| S.A.      | pramod    |
++-----------+-----------+
+
+51) Select employees first name, last name, job_id and salary whose first name starts with alphabet S.
+
+Ans: select e_name,dep_no,salary from employee where e_name like 's%';
+
++---------+--------+--------+
+| e_name  | dep_no | salary |
++---------+--------+--------+
+| shruti  |      4 | 200000 |
+| setu    |      4 |  20000 |
+| sanket  |      4 |  20000 |
+| suresh  |      4 |  15000 |
+| sabir   |      6 |  25000 |
+| sonu    |      6 |  30000 |
+| saheba  |      6 |  22000 |
+| sneha   |      6 |  14000 |
+| sadakat |      6 |  20000 |
+| saurabh |      1 |  35000 |
+| shubham |      5 |  15000 |
++---------+--------+--------+
+
+52) Write a query to select employee with the highest salary
+
+Ans: select * from employee where salary=(select max(salary) from employee);
+
++------+--------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name | salary | job_title | dep_no | commision | join_date  | manager |
++------+--------+--------+-----------+--------+-----------+------------+---------+
+|    2 | shruti | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
++------+--------+--------+-----------+--------+-----------+------------+---------+
+
+53) Select employee with the second highest salary.
+
+Ans: select e_name,max(salary) AS second_largest from employee where salary != (select max(salary) from employee);
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh     |  20000 | developer |      4 |         0 | 2018-07-22 |    NULL |
+|    2 | shruti    | 200000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    3 | setu      |  20000 | developer |      4 |         0 | 2018-07-22 |       1 |
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2018-07-22 |       1 |
+|    5 | ramesh    |  25000 | developer |      4 |         1 | 2014-06-15 |       2 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2021-04-13 |       3 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2027-02-17 |       2 |
+|    8 | himesh    |  18000 | developer |      4 |         1 | 2014-04-19 |       3 |
+|    9 | Aditi     |  20000 | designer  |      3 |         0 | 2022-05-21 |    NULL |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2016-03-22 |       9 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2026-06-21 |       0 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2024-08-22 |       0 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2010-07-22 |       0 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2015-06-21 |       0 |
+|   15 | Kabir     |  26000 | designer  |      3 |         0 | 2029-07-19 |       0 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2022-04-18 |       0 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2009-04-19 |       0 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2004-07-18 |       0 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2007-08-20 |       0 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2010-04-22 |       0 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2004-03-21 |       0 |
+|   22 | sneha     |  14000 | P.C.      |      6 |         1 | 2005-03-21 |       0 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2016-05-19 |       0 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2011-06-18 |       0 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-08-16 |       0 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2010-12-20 |       0 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2011-11-21 |       0 |
+|   28 | Keshav    |  26000 | H.R.      |      2 |         0 | 2001-01-18 |       0 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2014-05-17 |       0 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2020-05-12 |       0 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2021-07-18 |       0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2024-04-20 |       0 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2020-04-22 |       0 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2003-05-17 |       0 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2024-01-22 |       0 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2025-03-22 |       0 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2010-08-21 |       0 |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+
+55) Write a query to select employees and their corresponding managers and their salaries 
+
+Ans: select e1.e_name AS manager,e2.e_name AS Employee,e1.salary AS manager_salary,e2.salary AS Employee_salary from employee e1, employee e2 where e2.manager=e1.e_id;
+
++---------+----------+----------------+-----------------+
+| manager | Employee | manager_salary | Employee_salary |
++---------+----------+----------------+-----------------+
+| uvesh   | shruti   |          20000 |          200000 |
+| uvesh   | setu     |          20000 |           20000 |
+| uvesh   | sanket   |          20000 |           20000 |
+| shruti  | ramesh   |         200000 |           25000 |
+| setu    | mahesh   |          20000 |           35000 |
+| shruti  | suresh   |         200000 |           15000 |
+| setu    | himesh   |          20000 |           18000 |
+| Aditi   | Akash    |          20000 |           14000 |
++---------+----------+----------------+-----------------+
+
+56) Write a query to show count of employees under each manager in descending order
+
+Ans: SELECT  sup.e_name AS manager,count(sub.e_id) AS number_of_employees FROM employee sub JOIN employee sup ON sub.manager = sup.e_id GROUP BY sup.e_id;
+
++---------+---------------------+
+| manager | number_of_employees |
++---------+---------------------+
+| uvesh   |                   3 |
+| shruti  |                   2 |
+| setu    |                   2 |
+| Aditi   |                   1 |
++---------+---------------------+
+
+57) Find the count of employees in each department.
+
+Ans: select job_title,count(*) AS Total_Employee from employee group by dep_no;
+
++-----------+----------------+
+| job_title | Total_Employee |
++-----------+----------------+
+| Manager   |              2 |
+| H.R.      |              4 |
+| designer  |              8 |
+| developer |              8 |
+| Clerk     |              4 |
+| P.C.      |              8 |
+| S.A.      |              3 |
++-----------+----------------+
+
+58) Get the count of employees hired year wise.
+
+Ans: select year(join_date),count(*) AS Total_Employee from employee group by year(join_date);
+
++-----------------+----------------+
+| year(join_date) | Total_Employee |
++-----------------+----------------+
+|            2001 |              1 |
+|            2003 |              1 |
+|            2004 |              2 |
+|            2005 |              1 |
+|            2007 |              1 |
+|            2009 |              1 |
+|            2010 |              4 |
+|            2011 |              2 |
+|            2012 |              1 |
+|            2014 |              3 |
+|            2015 |              1 |
+|            2016 |              2 |
+|            2018 |              3 |
+|            2020 |              2 |
+|            2021 |              2 |
+|            2022 |              3 |
+|            2024 |              3 |
+|            2025 |              1 |
+|            2026 |              1 |
+|            2027 |              1 |
+|            2029 |              1 |
++-----------------+----------------+
+
+60) Select the employees whose first_name contains “an”.
+
+Ans: select e_name from employee where e_name like '%an%';
+
++---------+
+| e_name  |
++---------+
+| sanket  |
+| Anand   |
+| Archana |
+| poojan  |
++---------+
+
+62) Find the employees who joined in August, 1994.
+
+Ans: select e_id,e_name from employee where year(join_date)=2018 and month(join_date)=8;
+
++------+---------+
+| e_id | e_name  |
++------+---------+
+|    1 | uvesh   |
+|    2 | shruti  |
+|    5 | ramesh  |
+|    7 | suresh  |
+|   10 | Akash   |
+|   12 | Arnav   |
+|   13 | Archana |
+|   14 | Arnav   |
+|   16 | Padma   |
+|   17 | sabir   |
+|   18 | sonu    |
+|   20 | Akash   |
+|   21 | neha    |
+|   23 | sadakat |
+|   24 | Rabia   |
+|   26 | Deep    |
+|   27 | Arjun   |
+|   29 | khalid  |
+|   30 | saurabh |
+|   31 | shubham |
+|   33 | karun   |
+|   34 | raghav  |
+|   36 | poojan  |
++------+---------+
+
+63) Write an SQL query to display employees who earn more than the average salary in that company.
+
+Ans: select *,avg(salary) from employee where salary>(select avg(salary) from employee);
+
++------+--------+--------+-----------+--------+-----------+------------+---------+-------------+
+| e_id | e_name | salary | job_title | dep_no | commision | join_date  | manager | avg(salary) |
++------+--------+--------+-----------+--------+-----------+------------+---------+-------------+
+|    2 | shruti | 200000 | developer |      4 |         0 | 2018-08-25 |       1 |  54000.0000 |
++------+--------+--------+-----------+--------+-----------+------------+---------+-------------+
+
+64) Find the maximum salary from each department.
+
+Ans: select job_title,max(salary) AS Max_Salary from employee group by job_title;
+
++-----------+------------+
+| job_title | Max_Salary |
++-----------+------------+
+| Clerk     |      20000 |
+| designer  |      26000 |
+| developer |     200000 |
+| H.R.      |      50000 |
+| Manager   |      35000 |
+| P.C.      |      30000 |
+| S.A.      |      20000 |
++-----------+------------+
+
+65) Write a SQL query to display the 5 least earning employees.
+
+Ans: select * from employee e where 5>(select count(*) from employee where e.salary > salary);
+
++------+---------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name  | salary | job_title | dep_no | commision | join_date  | manager |
++------+---------+--------+-----------+--------+-----------+------------+---------+
+|   12 | Arnav   |  10000 | designer  |      3 |         0 | 2018-08-18 |       0 |
+|   13 | Archana |   5000 | designer  |      3 |         0 | 2018-08-18 |       0 |
+|   21 | neha    |  12000 | P.C.      |      6 |         0 | 2018-08-18 |       0 |
+|   32 | Mahesh  |  10000 | Clerk     |      5 |         0 | 2017-12-24 |       0 |
+|   33 | karun   |   5000 | Clerk     |      5 |         0 | 2018-08-18 |       0 |
++------+---------+--------+-----------+--------+-----------+------------+---------+
+
+66) Find the employees hired in the 80s.
+
+Ans: select * from employee where year(join_date) between 2011 and 2020;
+
++------+---------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name  | salary | job_title | dep_no | commision | join_date  | manager |
++------+---------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh   |  20000 | developer |      4 |         0 | 2018-08-20 |    NULL |
+|    2 | shruti  | 200000 | developer |      4 |         0 | 2018-08-25 |       1 |
+|    3 | setu    |  20000 | developer |      4 |         0 | 2019-08-18 |       1 |
+|    4 | sanket  |  20000 | developer |      4 |         1 | 2020-08-20 |       1 |
+|    5 | ramesh  |  25000 | developer |      4 |         1 | 2018-08-15 |       2 |
+|    6 | mahesh  |  35000 | developer |      4 |         1 | 2015-09-26 |       3 |
+|    7 | suresh  |  15000 | developer |      4 |         0 | 2018-08-27 |       2 |
+|    9 | Aditi   |  20000 | designer  |      3 |         0 | 2016-04-22 |    NULL |
+|   10 | Akash   |  14000 | designer  |      3 |         0 | 2018-08-30 |       9 |
+|   12 | Arnav   |  10000 | designer  |      3 |         0 | 2018-08-18 |       0 |
+|   13 | Archana |   5000 | designer  |      3 |         0 | 2018-08-18 |       0 |
+|   14 | Arnav   |  17000 | designer  |      3 |         1 | 2018-08-18 |       0 |
+|   15 | Kabir   |  26000 | designer  |      3 |         0 | 2019-03-05 |       0 |
+|   16 | Padma   |  21000 | designer  |      3 |         1 | 2018-08-18 |       0 |
+|   17 | sabir   |  25000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   18 | sonu    |  30000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   19 | saheba  |  22000 | P.C.      |      6 |         0 | 2020-06-23 |       0 |
+|   20 | Akash   |  18000 | P.C.      |      6 |         0 | 2018-08-18 |       0 |
+|   21 | neha    |  12000 | P.C.      |      6 |         0 | 2018-08-18 |       0 |
+|   22 | sneha   |  14000 | P.C.      |      6 |         1 | 2017-06-04 |       0 |
+|   23 | sadakat |  20000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   24 | Rabia   |  25000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   25 | Pooja   |  50000 | H.R.      |      2 |         0 | 2012-04-16 |       0 |
+|   26 | Deep    |  20000 | H.R.      |      2 |         1 | 2018-08-18 |       0 |
+|   27 | Arjun   |  22000 | H.R.      |      2 |         0 | 2018-08-18 |       0 |
+|   28 | Keshav  |  26000 | H.R.      |      2 |         0 | 2016-11-14 |       0 |
+|   29 | khalid  |  30000 | Manager   |      1 |         0 | 2018-08-18 |       0 |
+|   30 | saurabh |  35000 | Manager   |      1 |         0 | 2018-08-18 |       0 |
+|   31 | shubham |  15000 | Clerk     |      5 |         1 | 2018-08-18 |       0 |
+|   32 | Mahesh  |  10000 | Clerk     |      5 |         0 | 2017-12-24 |       0 |
+|   33 | karun   |   5000 | Clerk     |      5 |         0 | 2018-08-18 |       0 |
+|   34 | raghav  |  20000 | Clerk     |      5 |         1 | 2018-08-18 |       0 |
+|   36 | poojan  |  15000 | S.A.      |      7 |         0 | 2018-08-18 |       0 |
+|   37 | pramod  |  20000 | S.A.      |      7 |         1 | 2014-08-24 |       0 |
++------+---------+--------+-----------+--------+-----------+------------+---------+
+
+67) Display the employees first name and the name in reverse order.
+
+Ans: select e_name,reverse(e_name) from employee;
+
++-----------+-----------------+
+| e_name    | reverse(e_name) |
++-----------+-----------------+
+| uvesh     | hsevu           |
+| shruti    | iturhs          |
+| setu      | utes            |
+| sanket    | teknas          |
+| ramesh    | hsemar          |
+| mahesh    | hseham          |
+| suresh    | hserus          |
+| himesh    | hsemih          |
+| Aditi     | itidA           |
+| Akash     | hsakA           |
+| Anand     | dnanA           |
+| Arnav     | vanrA           |
+| Archana   | anahcrA         |
+| Arnav     | vanrA           |
+| Kabir     | ribaK           |
+| Padma     | amdaP           |
+| sabir     | ribas           |
+| sonu      | unos            |
+| saheba    | abehas          |
+| Akash     | hsakA           |
+| neha      | ahen            |
+| sneha     | ahens           |
+| sadakat   | takadas         |
+| Rabia     | aibaR           |
+| Pooja     | ajooP           |
+| Deep      | peeD            |
+| Arjun     | nujrA           |
+| Keshav    | vahseK          |
+| khalid    | dilahk          |
+| saurabh   | hbaruas         |
+| shubham   | mahbuhs         |
+| Mahesh    | hsehaM          |
+| karun     | nurak           |
+| raghav    | vahgar          |
+| Bharatwaj | jawtarahB       |
+| poojan    | najoop          |
+| pramod    | domarp          |
++-----------+-----------------+
+
+68) Find the employees who joined the company after 15th of the month.
+
+Ans: select * from employee where day(join_date)>15;
+
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+| e_id | e_name    | salary | job_title | dep_no | commision | join_date  | manager |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+|    1 | uvesh     |  20000 | developer |      4 |         0 | 2018-08-20 |    NULL |
+|    2 | shruti    | 200000 | developer |      4 |         0 | 2018-08-25 |       1 |
+|    3 | setu      |  20000 | developer |      4 |         0 | 2019-08-18 |       1 |
+|    4 | sanket    |  20000 | developer |      4 |         1 | 2020-08-20 |       1 |
+|    6 | mahesh    |  35000 | developer |      4 |         1 | 2015-09-26 |       3 |
+|    7 | suresh    |  15000 | developer |      4 |         0 | 2018-08-27 |       2 |
+|    9 | Aditi     |  20000 | designer  |      3 |         0 | 2016-04-22 |    NULL |
+|   10 | Akash     |  14000 | designer  |      3 |         0 | 2018-08-30 |       9 |
+|   11 | Anand     |  22000 | designer  |      3 |         1 | 2021-08-26 |       0 |
+|   12 | Arnav     |  10000 | designer  |      3 |         0 | 2018-08-18 |       0 |
+|   13 | Archana   |   5000 | designer  |      3 |         0 | 2018-08-18 |       0 |
+|   14 | Arnav     |  17000 | designer  |      3 |         1 | 2018-08-18 |       0 |
+|   16 | Padma     |  21000 | designer  |      3 |         1 | 2018-08-18 |       0 |
+|   17 | sabir     |  25000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   18 | sonu      |  30000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   19 | saheba    |  22000 | P.C.      |      6 |         0 | 2020-06-23 |       0 |
+|   20 | Akash     |  18000 | P.C.      |      6 |         0 | 2018-08-18 |       0 |
+|   21 | neha      |  12000 | P.C.      |      6 |         0 | 2018-08-18 |       0 |
+|   23 | sadakat   |  20000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   24 | Rabia     |  25000 | P.C.      |      6 |         1 | 2018-08-18 |       0 |
+|   25 | Pooja     |  50000 | H.R.      |      2 |         0 | 2012-04-16 |       0 |
+|   26 | Deep      |  20000 | H.R.      |      2 |         1 | 2018-08-18 |       0 |
+|   27 | Arjun     |  22000 | H.R.      |      2 |         0 | 2018-08-18 |       0 |
+|   29 | khalid    |  30000 | Manager   |      1 |         0 | 2018-08-18 |       0 |
+|   30 | saurabh   |  35000 | Manager   |      1 |         0 | 2018-08-18 |       0 |
+|   31 | shubham   |  15000 | Clerk     |      5 |         1 | 2018-08-18 |       0 |
+|   32 | Mahesh    |  10000 | Clerk     |      5 |         0 | 2017-12-24 |       0 |
+|   33 | karun     |   5000 | Clerk     |      5 |         0 | 2018-08-18 |       0 |
+|   34 | raghav    |  20000 | Clerk     |      5 |         1 | 2018-08-18 |       0 |
+|   35 | Bharatwaj |  15000 | S.A.      |      7 |         0 | 2021-10-25 |       0 |
+|   36 | poojan    |  15000 | S.A.      |      7 |         0 | 2018-08-18 |       0 |
+|   37 | pramod    |  20000 | S.A.      |      7 |         1 | 2014-08-24 |       0 |
++------+-----------+--------+-----------+--------+-----------+------------+---------+
+
+70) Get all values from the “FIRST_NAME” column after removing white space on the left.
+
+Ans: select ltrim(e_name) from employee;
+
++---------------+
+| ltrim(e_name) |
++---------------+
+| uvesh         |
+| shruti        |
+| setu          |
+| sanket        |
+| ramesh        |
+| mahesh        |
+| suresh        |
+| himesh        |
+| Aditi         |
+| Akash         |
+| Anand         |
+| Arnav         |
+| Archana       |
+| Arnav         |
+| Kabir         |
+| Padma         |
+| sabir         |
+| sonu          |
+| saheba        |
+| Akash         |
+| neha          |
+| sneha         |
+| sadakat       |
+| Rabia         |
+| Pooja         |
+| Deep          |
+| Arjun         |
+| Keshav        |
+| khalid        |
+| saurabh       |
+| shubham       |
+| Mahesh        |
+| karun         |
+| raghav        |
+| Bharatwaj     |
+| poojan        |
+| pramod        |
++---------------+
+
+71) Get all values from the “FIRST_NAME” column after removing white space on the right.
+
+Ans: select rtrim(e_name) from employee;
+
++---------------+
+| rtrim(e_name) |
++---------------+
+| uvesh         |
+| shruti        |
+| setu          |
+| sanket        |
+| ramesh        |
+| mahesh        |
+| suresh        |
+| himesh        |
+| Aditi         |
+| Akash         |
+| Anand         |
+| Arnav         |
+| Archana       |
+| Arnav         |
+| Kabir         |
+| Padma         |
+| sabir         |
+| sonu          |
+| saheba        |
+| Akash         |
+| neha          |
+| sneha         |
+| sadakat       |
+| Rabia         |
+| Pooja         |
+| Deep          |
+| Arjun         |
+| Keshav        |
+| khalid        |
+| saurabh       |
+| shubham       |
+| Mahesh        |
+| karun         |
+| raghav        |
+| Bharatwaj     |
+| poojan        |
+| pramod        |
++---------------+
+
+72) Get the position of the letter ‘h’ in ‘John’.
+
+Ans: select instr('john','h');
+
++-------------------+
+| instr('john','h') |
++-------------------+
+|                 3 |
++-------------------+
+
+73) Get the first 4 characters of “FIRST_NAME” column..
+
+Ans: select left(e_name,4) from employee;
+
++----------------+
+| left(e_name,4) |
++----------------+
+| uves           |
+| shru           |
+| setu           |
+| sank           |
+| rame           |
+| mahe           |
+| sure           |
+| hime           |
+| Adit           |
+| Akas           |
+| Anan           |
+| Arna           |
+| Arch           |
+| Arna           |
+| Kabi           |
+| Padm           |
+| sabi           |
+| sonu           |
+| sahe           |
+| Akas           |
+| neha           |
+| sneh           |
+| sada           |
+| Rabi           |
+| Pooj           |
+| Deep           |
+| Arju           |
+| Kesh           |
+| khal           |
+| saur           |
+| shub           |
+| Mahe           |
+| karu           |
+| ragh           |
+| Bhar           |
+| pooj           |
+| pram           |
++----------------+
+
+75) Get all “Last_Name” in uppercase.
+
+Ans: select ucase(e_name) from employee;
+
++---------------+
+| ucase(e_name) |
++---------------+
+| UVESH         |
+| SHRUTI        |
+| SETU          |
+| SANKET        |
+| RAMESH        |
+| MAHESH        |
+| SURESH        |
+| HIMESH        |
+| ADITI         |
+| AKASH         |
+| ANAND         |
+| ARNAV         |
+| ARCHANA       |
+| ARNAV         |
+| KABIR         |
+| PADMA         |
+| SABIR         |
+| SONU          |
+| SAHEBA        |
+| AKASH         |
+| NEHA          |
+| SNEHA         |
+| SADAKAT       |
+| RABIA         |
+| POOJA         |
+| DEEP          |
+| ARJUN         |
+| KESHAV        |
+| KHALID        |
+| SAURABH       |
+| SHUBHAM       |
+| MAHESH        |
+| KARUN         |
+| RAGHAV        |
+| BHARATWAJ     |
+| POOJAN        |
+| PRAMOD        |
++---------------+
+
+76) Display all the values of the “First_Name” column using the alias “Employee Name”
+
+Ans: select e_name AS Employee_Name from employee;
+
++---------------+
+| Employee_Name |
++---------------+
+| uvesh         |
+| shruti        |
+| setu          |
+| sanket        |
+| ramesh        |
+| mahesh        |
+| suresh        |
+| himesh        |
+| Aditi         |
+| Akash         |
+| Anand         |
+| Arnav         |
+| Archana       |
+| Arnav         |
+| Kabir         |
+| Padma         |
+| sabir         |
+| sonu          |
+| saheba        |
+| Akash         |
+| neha          |
+| sneha         |
+| sadakat       |
+| Rabia         |
+| Pooja         |
+| Deep          |
+| Arjun         |
+| Keshav        |
+| khalid        |
+| saurabh       |
+| shubham       |
+| Mahesh        |
+| karun         |
+| raghav        |
+| Bharatwaj     |
+| poojan        |
+| pramod        |
++---------------+
+
+77) Get the length of the text in the “First_name” column.
+
+Ans: select length(e_name) from employee;
+
++----------------+
+| length(e_name) |
++----------------+
+|              5 |
+|              6 |
+|              4 |
+|              6 |
+|              6 |
+|              6 |
+|              6 |
+|              6 |
+|              5 |
+|              5 |
+|              5 |
+|              5 |
+|              7 |
+|              5 |
+|              5 |
+|              5 |
+|              5 |
+|              4 |
+|              6 |
+|              5 |
+|              4 |
+|              5 |
+|              7 |
+|              5 |
+|              5 |
+|              4 |
+|              5 |
+|              6 |
+|              6 |
+|              7 |
+|              7 |
+|              6 |
+|              5 |
+|              6 |
+|              9 |
+|              6 |
+|              6 |
++----------------+
+
+78) Get the employee’s first name after replacing ‘a’ with ‘#’.
+
+Ans: select replace(e_name,'a','#') from employee;
+
++-------------------------+
+| replace(e_name,'a','#') |
++-------------------------+
+| uvesh                   |
+| shruti                  |
+| setu                    |
+| s#nket                  |
+| r#mesh                  |
+| m#hesh                  |
+| suresh                  |
+| himesh                  |
+| Aditi                   |
+| Ak#sh                   |
+| An#nd                   |
+| Arn#v                   |
+| Arch#n#                 |
+| Arn#v                   |
+| K#bir                   |
+| P#dm#                   |
+| s#bir                   |
+| sonu                    |
+| s#heb#                  |
+| Ak#sh                   |
+| neh#                    |
+| sneh#                   |
+| s#d#k#t                 |
+| R#bi#                   |
+| Pooj#                   |
+| Deep                    |
+| Arjun                   |
+| Kesh#v                  |
+| kh#lid                  |
+| s#ur#bh                 |
+| shubh#m                 |
+| M#hesh                  |
+| k#run                   |
+| r#gh#v                  |
+| Bh#r#tw#j               |
+| pooj#n                  |
+| pr#mod                  |
++-------------------------+
+
+79. Get the employee’s id and first name in a single column separated by a ‘_’.
+
+Ans: select concat(e_id,'_',e_name) from employee;
+
++-------------------------+
+| concat(e_id,'_',e_name) |
++-------------------------+
+| 1_uvesh                 |
+| 2_shruti                |
+| 3_setu                  |
+| 4_sanket                |
+| 5_ramesh                |
+| 6_mahesh                |
+| 7_suresh                |
+| 8_himesh                |
+| 9_Aditi                 |
+| 10_Akash                |
+| 11_Anand                |
+| 12_Arnav                |
+| 13_Archana              |
+| 14_Arnav                |
+| 15_Kabir                |
+| 16_Padma                |
+| 17_sabir                |
+| 18_sonu                 |
+| 19_saheba               |
+| 20_Akash                |
+| 21_neha                 |
+| 22_sneha                |
+| 23_sadakat              |
+| 24_Rabia                |
+| 25_Pooja                |
+| 26_Deep                 |
+| 27_Arjun                |
+| 28_Keshav               |
+| 29_khalid               |
+| 30_saurabh              |
+| 31_shubham              |
+| 32_Mahesh               |
+| 33_karun                |
+| 34_raghav               |
+| 35_Bharatwaj            |
+| 36_poojan               |
+| 37_pramod               |
++-------------------------+
+
+80) Get the year, month, and day from the “Joining_date” column.
+
+Ans: select year(join_date),month(join_date),day(join_date) from employee;
+
++-----------------+------------------+----------------+
+| year(join_date) | month(join_date) | day(join_date) |
++-----------------+------------------+----------------+
+|            2018 |                8 |             20 |
+|            2018 |                8 |             25 |
+|            2019 |                8 |             18 |
+|            2020 |                8 |             20 |
+|            2018 |                8 |             15 |
+|            2015 |                9 |             26 |
+|            2018 |                8 |             27 |
+|            2021 |                8 |             14 |
+|            2016 |                4 |             22 |
+|            2018 |                8 |             30 |
+|            2021 |                8 |             26 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2019 |                3 |              5 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2020 |                6 |             23 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2017 |                6 |              4 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2012 |                4 |             16 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2016 |               11 |             14 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2017 |               12 |             24 |
+|            2018 |                8 |             18 |
+|            2018 |                8 |             18 |
+|            2021 |               10 |             25 |
+|            2018 |                8 |             18 |
+|            2014 |                8 |             24 |
++-----------------+------------------+----------------+
+
