@@ -149,5 +149,113 @@ Ans:  select repeat(e_id ,2),e_name,repeat(job_title ,2) from employee;
 +-----------------+-----------+----------------------+
 
 
+4) IF in Stored procedure 
 
+Ans: delimiter //
 
+create procedure prog_if()
+    -> BEGIN
+    -> select e_id,e_name,if(salary>20000,salary,NULL) AS salary_more_20000 from employee;
+    -> END //
+
+delimiter ;
+
+call prog_if();
+
++------+-----------+-------------------+
+| e_id | e_name    | salary_more_20000 |
++------+-----------+-------------------+
+|    1 | uvesh     |              NULL |
+|    2 | shruti    |            200000 |
+|    3 | setu      |              NULL |
+|    4 | sanket    |              NULL |
+|    5 | ramesh    |             25000 |
+|    6 | mahesh    |             35000 |
+|    7 | suresh    |              NULL |
+|    8 | himesh    |              NULL |
+|    9 | Aditi     |              NULL |
+|   10 | Akash     |              NULL |
+|   11 | Anand     |             22000 |
+|   12 | Arnav     |              NULL |
+|   13 | Archana   |              NULL |
+|   14 | Arnav     |              NULL |
+|   15 | Kabir     |             26000 |
+|   16 | Padma     |             21000 |
+|   17 | sabir     |             25000 |
+|   18 | sonu      |             30000 |
+|   19 | saheba    |             22000 |
+|   20 | Akash     |              NULL |
+|   21 | neha      |              NULL |
+|   22 | sneha     |              NULL |
+|   23 | sadakat   |              NULL |
+|   24 | Rabia     |             25000 |
+|   25 | Pooja     |             50000 |
+|   26 | Deep      |              NULL |
+|   27 | Arjun     |             22000 |
+|   28 | Keshav    |             26000 |
+|   29 | khalid    |             30000 |
+|   30 | saurabh   |             35000 |
+|   31 | shubham   |              NULL |
+|   32 | Mahesh    |              NULL |
+|   33 | karun     |              NULL |
+|   34 | raghav    |              NULL |
+|   35 | Bharatwaj |              NULL |
+|   36 | poojan    |              NULL |
+|   37 | pramod    |              NULL |
+|   38 | joh%      |             23000 |
++------+-----------+-------------------+
+
+5) CASE in stored procedure:
+
+Ans: delimiter //
+
+create procedure prog_case() BEGIN select e_name,salary, CASE  WHEN salary > 20000 THEN "More than 20000" WHEN salary < 20000 THEN "LESS than 20000" ELSE "salary is exact 20000" END AS Compare from employee; END//
+
+delimiter ;
+
+call prog_case();
+
++-----------+--------+-----------------------+
+| e_name    | salary | Compare               |
++-----------+--------+-----------------------+
+| uvesh     |  20000 | salary is exact 20000 |
+| shruti    | 200000 | More than 20000       |
+| setu      |  20000 | salary is exact 20000 |
+| sanket    |  20000 | salary is exact 20000 |
+| ramesh    |  25000 | More than 20000       |
+| mahesh    |  35000 | More than 20000       |
+| suresh    |  15000 | LESS than 20000       |
+| himesh    |  18000 | LESS than 20000       |
+| Aditi     |  20000 | salary is exact 20000 |
+| Akash     |  14000 | LESS than 20000       |
+| Anand     |  22000 | More than 20000       |
+| Arnav     |  10000 | LESS than 20000       |
+| Archana   |   5000 | LESS than 20000       |
+| Arnav     |  17000 | LESS than 20000       |
+| Kabir     |  26000 | More than 20000       |
+| Padma     |  21000 | More than 20000       |
+| sabir     |  25000 | More than 20000       |
+| sonu      |  30000 | More than 20000       |
+| saheba    |  22000 | More than 20000       |
+| Akash     |  18000 | LESS than 20000       |
+| neha      |  12000 | LESS than 20000       |
+| sneha     |  14000 | LESS than 20000       |
+| sadakat   |  20000 | salary is exact 20000 |
+| Rabia     |  25000 | More than 20000       |
+| Pooja     |  50000 | More than 20000       |
+| Deep      |  20000 | salary is exact 20000 |
+| Arjun     |  22000 | More than 20000       |
+| Keshav    |  26000 | More than 20000       |
+| khalid    |  30000 | More than 20000       |
+| saurabh   |  35000 | More than 20000       |
+| shubham   |  15000 | LESS than 20000       |
+| Mahesh    |  10000 | LESS than 20000       |
+| karun     |   5000 | LESS than 20000       |
+| raghav    |  20000 | salary is exact 20000 |
+| Bharatwaj |  15000 | LESS than 20000       |
+| poojan    |  15000 | LESS than 20000       |
+| pramod    |  20000 | salary is exact 20000 |
+| joh%      |  23000 | More than 20000       |
++-----------+--------+-----------------------+
+
+6) 
